@@ -1,0 +1,407 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+        $(".nav_div a").eq(0).addClass("cur");
+    });
+</script>
+<link href="~/website/css/index.css" rel="stylesheet" type="text/css" media="all" />
+@Html.Partial("_PartialBanner")
+<link href="~/website/css/proinfo.css" rel="stylesheet" type="text/css" media="all" />
+<div class="pro_info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+                <div class="title">
+                    <img src="~/website/img/pro_info.png" />
+                </div>
+                <div class="title_list">
+                    <a href="#" data-rowid="pc1">工作台</a>
+                    <a href="#" data-rowid="pc2">工业铝型材</a>
+                    <a href="#" data-rowid="pc3">围栏及防护罩</a>
+                    <a href="#" data-rowid="pc4">工业梯/踏台/工业平台</a>
+                    <a href="#" data-rowid="pc5">铝型材配件</a>
+                    <a href="#" data-rowid="pc6">开模定制 </a>
+                    <a href="#" data-rowid="pc7">铝型材框架应用</a>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="title_right">
+                    <ul>
+                        <li><a href="/">工作台</a></li>
+                        <li><a href="#">工业铝型材</a></li>
+                        <li><a href="#">围栏及防护罩</a></li>
+                        <li><a href="#">铝型材框架应用</a></li>
+                    </ul>
+                    <a href="/Product/List">MORE</a>
+                </div>
+                <div class="pro_list">
+                    <div id="pc1">
+                        <div class="row">
+                            @{
+                                int i1 = 0;
+                                foreach (var item in ViewBag.ProList1 as List<AMW.Model.Entity.MldProduct>)
+                                {
+                                    i1++;
+                                    <div class="col-md-4"><a href="/Product/Index/@item.ID"><img src="@item.Img" /><p>@item.Name</p></a></div>
+                                    if (i1 % 3 == 0)
+                                    {
+                                        @Html.Raw("</div><div class=\"row\">");
+
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div id="pc2" class="hide">
+                        <div class="row">
+                            @{
+                                int i2 = 0;
+                                foreach (var item in ViewBag.ProList2 as List<AMW.Model.Entity.MldProduct>)
+                                {
+                                    i2++;
+                                    <div class="col-md-4"><a href="/Product/Index/@item.ID"><img src="@item.Img" /><p>@item.Name</p></a></div>
+                                    if (i2 % 3 == 0)
+                                    {
+                                        @Html.Raw("</div><div class=\"row\">");
+
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="hide" id="pc3">
+                        <div class="row hide">
+                            @{
+                                int i3 = 0;
+                                foreach (var item in ViewBag.ProList3 as List<AMW.Model.Entity.MldProduct>)
+                                {
+                                    i3++;
+                                    <div class="col-md-4"><a href="/Product/Index/@item.ID"><img src="@item.Img" /><p>@item.Name</p></a></div>
+                                    if (i3 % 3 == 0)
+                                    {
+                                        @Html.Raw("</div><div class=\"row\">");
+
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div id="pc4" class="hide">
+                        <div class="row">
+                            @{
+                                int i4 = 0;
+                                foreach (var item in ViewBag.ProList4 as List<AMW.Model.Entity.MldProduct>)
+                                {
+                                    i4++;
+                                    <div class="col-md-4"><a href="/Product/Index/@item.ID"><img src="@item.Img" /><p>@item.Name</p></a></div>
+                                    if (i4 % 3 == 0)
+                                    {
+                                        @Html.Raw("</div><div class=\"row\">");
+
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div id="pc5" class="hide">
+                        <div class="row">
+                            @{
+                                int i5 = 0;
+                                foreach (var item in ViewBag.ProList5 as List<AMW.Model.Entity.MldProduct>)
+                                {
+                                    i5++;
+                                    <div class="col-md-4"><a href="/Product/Index/@item.ID"><img src="@item.Img" /><p>@item.Name</p></a></div>
+                                    if (i5 % 3 == 0)
+                                    {
+                                        @Html.Raw("</div><div class=\"row\">");
+
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="hide" id="pc6">
+                        <div class="row">
+                            @{
+                                int i6 = 0;
+                                foreach (var item in ViewBag.ProList6 as List<AMW.Model.Entity.MldProduct>)
+                                {
+                                    i6++;
+                                    <div class="col-md-4"><a href="javascript:void(0)"><img src="@item.Img" /><p>@item.Name</p></a></div>
+                                    if (i6 % 3 == 0)
+                                    {
+                                        @Html.Raw("</div><div class=\"row\">");
+
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="hide" id="pc7">
+                        <div class="row">
+                            @{
+                                int i7 = 0;
+                                foreach (var item in ViewBag.ProList7 as List<AMW.Model.Entity.MldProduct>)
+                                {
+                                    i7++;
+                                    <div class="col-md-4"><a href="/Product/Index/@item.ID"><img src="@item.Img" /><p>@item.Name</p></a></div>
+                                    if (i7 % 3 == 0)
+                                    {
+                                        @Html.Raw("</div><div class=\"row\">");
+
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $(".pro_info .title_list > a").hover(function () {
+            $(".pro_info .title_list > a").removeClass("cur");
+            $(this).addClass("cur");
+            $(".pro_info .pro_list>div").addClass("hide");
+            $("#" + $(this).attr("data-rowid")).removeClass("hide");
+        });
+    });
+</script>
+
+<div class="pro_show">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+               <div style="text-align:center;"><img src="~/website/img/pro_show_title.png" /></div>
+                <div style="margin-top:30px; color:#666666; font-size:14px;">
+                    <p></p>
+                </div>
+
+                <script type="text/javascript" src="~/website/js/ZoomPic.js"></script>
+                <div id="focus_Box">
+                    <span class="prev"></span>
+                    <span class="next"></span>
+                    <ul>
+                        <li>
+                            <img alt="防静电流水线工作台" src="/website/img/防静电流水线工作台.jpg" />
+                            <p>防静电流水线工作台</p>
+                        </li>
+                        <li>
+                            <img alt="机器人防护围栏？" src="/website/img/机器人防护围栏.jpg" />
+                            <p>机器人防护围栏</p>
+                        </li>
+                        <li>
+                            <img alt="铝型材洁净房" src="/website/img/铝型材洁净房.jpg" />
+                            <p>铝型材洁净房</p>
+                        </li>
+                        <li>
+                            <img alt="铝型材移动平台梯" src="/website/img/铝型材移动平台梯.jpg" />
+                            <p>铝型材移动平台梯</p>
+                        </li>
+                        <li>
+                            <img alt="设备框架" src="/website/img/设备框架.jpg" />
+                            <p>设备框架</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        new ZoomPic("focus_Box");
+    });
+</script>
+
+
+<div class="pro_features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div style="text-align:center;"><img src="~/website/img/features.png" /></div>
+                <img src="~/website/img/features_img.jpg" style="width:100%; margin-top:45px;" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="pro_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div style="text-align:center;margin-bottom:55px;"><img src="~/website/img/area.png" /></div>
+                <div class="pro_list">
+                    <div class="row">
+                        <div class="col-md-4"><a href="#"><img src="~/website/img/area1.jpg" /><p><label>电子电气行业</label><br />服务的客户有上海电气、三菱、西门子等</p></a></div>
+                        <div class="col-md-4"><a href="#"><img src="~/website/img/area2.jpg" /><p><label>航空航天行业</label><br />航天航空行业 服务的客户有 沈飞 哈飞 西飞 江南航天 凌云 等</p></a></div>
+                        <div class="col-md-4"><a href="#"><img src="~/website/img/area3.jpg" /><p><label>物流设备制造行业</label><br />物流设备制造行业 服务的客户有 安吉物流 德玛泰克 等</p></a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4"><a href="#"><img src="~/website/img/area4.jpg" /><p><label>汽车制造行业</label><br />汽车制造行业 服务的客户有 上海大众 上汽集团 长安汽车 比亚迪  一汽集团 等</p></a></div>
+                        <div class="col-md-4"><a href="#"><img src="~/website/img/area5.jpg" /><p><label>机器人行业</label><br />工业机器人行业 服务的客户有 ABB 库卡 发那科 柯马 新松 等</p></a></div>
+                        <div class="col-md-4"><a href="#"><img src="~/website/img/机械设备制造行业.jpg" /><p><label>机械设备制造行业</label><br />机械设备行业 服务的客户有 卡尔蔡司  三一重工 中车集团 安德里茨 艾克 瑞光 等</p></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <img src="~/website/img/customization_process.jpg" style="width:100%;" />
+</div>
+
+<link rel="stylesheet" href="/website/js/AmazeUI/assets/css/amazeui.min.css">
+<link rel="stylesheet" href="/website/js/AmazeUI/assets/css/app.css">
+
+<div class="pro_customer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div style="text-align:center;margin-bottom:55px;"><img src="/website/img/customer.png" /></div>
+
+                <div class="am-slider am-slider-default am-slider-carousel" data-am-flexslider="{itemWidth: 227, itemMargin: 10, slideshow: false}">
+                    <ul class="am-slides">
+                        <li><a href="#"><img src="~/website/img/friends1.jpg" /></a></li>
+                        <li><a href="#"><img src="~/website/img/friends2.jpg" /></a></li>
+                        <li><a href="#"><img src="~/website/img/friends3.jpg" /></a></li>
+                        <li><a href="#"><img src="~/website/img/friends4.png" /></a></li>
+                        <li><a href="#"><img src="~/website/img/friends5.png" /></a></li>
+                        <li><a href="#"><img src="~/website/img/friends6.png" /></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" style="text-align:center;padding:50px 0;">
+                <a href="#"><img src="~/website/img/more.png" /></a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/website/js/AmazeUI/assets/js/amazeui.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.am-slider').each(function () {
+            $(this).flexslider($(this).attr("data-am-flexslider"));
+        });
+    })
+</script>
+
+<div class="aboutus">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div style="text-align:center; margin-bottom:70px;"><img src="~/website/img/aboutus_title.png" /></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 about_content">
+                <img src="~/website/img/about_img.png" />
+                <p class="about_title">上海皇闽铝业有限公司</p>
+                <p>上海皇闽铝业有限公司是国内生产工业麵材的童点厂家之一，公司引进欧美国家的先进技术，产品已通过 IS 09001质量管理体系和产品质量认证究设计开发制造销售服务工业^材斗技创新新型的企业.公司本着'互惠互利、薄利多销”的经营理念,利用物流通道为各地区客户提供优质的服务和优惠的价格.本公司工业材质量一流.本公司细分为六大板块 ： 一:设计模具开发二:工业麵材挤压三:麵林框架及流?}^ li 送设备安装四:炫铸氧化电泳粉末喷涂五:非标工麵材产品直 销 六 : 工 件公司致力于市场新产品的开发，奉行产品质...</p>
+                <p><a href="/Home/AboutUs">{查看详情}</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="honor">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div style="text-align:center; margin-bottom:70px;"><img src="~/website/img/honor.png" /></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 about_content">
+                <link rel="stylesheet" href="/website/js/cooldog/css/Cooldog.css">
+                <link rel="stylesheet" href="/website/js/cooldog/css/iconfont.css">
+
+                <div class="Cooldog_container" style="margin-bottom:40px;">
+                    <div class="Cooldog_content">
+                        <ul>
+                            <li class="cur_left2"><a href="#"><img src="/website/img/honor_img1.png" alt=""></a></li>
+                            <li class="cur_left1"><a href="#"><img src="/website/img/honor_img2.png" alt=""></a></li>
+                            <li class="cur"><a href="#"><img src="/website/img/honor_img3.png" alt=""></a></li>
+                            <li class="cur_right1"><a href="#"><img src="/website/img/honor_img4.png" alt=""></a></li>
+                            <li class="cur_right2"><a href="#"><img src="/website/img/honor_img5.png" alt=""></a></li>
+                            <li><a href="#"><img src="/website/img/honor_img6.png" alt=""></a></li>
+                            <li><a href="#"><img src="/website/img/honor_img7.png" alt=""></a></li>
+                            <li><a href="#"><img src="/website/img/honor_img8.png" alt=""></a></li>
+                            <li><a href="#"><img src="/website/img/honor_img9.png" alt=""></a></li>
+                        </ul>
+                    </div>
+                    <a href="javascript:;" class="btn_left" style="text-decoration: none;">
+                        <i class="iconfont icon-zuoyoujiantou"></i>
+                    </a>
+                    <a href="javascript:;" class="btn_right" style="text-decoration: none;">
+                        <i class="iconfont icon-zuoyoujiantou-copy-copy"></i>
+                    </a>
+                </div>
+                <script type="text/javascript" src="/website/js/cooldog/js/Cooldog.js"></script>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="background-color:#fff; padding-top:32px; padding-bottom:70px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 news">
+                <div class="news_title">
+                    工业铝型材行业资讯
+                    <a href="/News/List">MORE</a>
+                </div>
+                <div class="news_no1">
+                    @{
+                        AMW.DAL.MldNewsDal newsDal = new AMW.DAL.MldNewsDal();
+                        AMW.Model.Entity.MldNews newsFirst = newsDal.GetFirst();
+                        if(null != newsFirst){
+                            <img style="width:160px; height:105px;" src="@newsFirst.Img" />
+                            <p class="p1">@newsFirst.Title</p>
+                            <p class="p2">@newsFirst.SubHead</p>
+                            <p class="p3"><a href="/News/Index/@newsFirst.ID">[查看详情]</a></p>        
+                        }
+                    }
+                    
+                </div>
+                <ul style="margin-top:15px;">
+                    @{
+                        List<AMW.Model.Entity.MldNews> news3th = newsDal.Get3th();
+                        if(null != news3th && news3th.Count>0){
+                            foreach (var item in news3th)
+                            {
+                                if(item.ID!=newsFirst.ID){
+                                    <li><a href="/News/Index/@item.ID"><label>·</label>@item.Title<span>@item.AddTime.ToString("yyyy-MM-dd")</span></a></li>    
+                                }
+                            }
+                        }
+                    }
+                </ul>
+            </div>
+            <div class="col-md-4 qa_div">
+                <div class="qa_title">铝型材常见问题解答</div>
+                <dl>
+                    <dt><span>Q</span>中国铝消费增长空间有多大？</dt>
+                    <dd><span>A</span>中国铝消费增长空间有多大？中国铝消费增长空间巨大回顾全球铝工业的发展，可以看到，铝消费在全球范围内、在各个应用领域基本上都是保持增长的，其增长的动力不仅来自于应用领域自身规模的扩大，更受到铝应用程度不...</dd>
+                </dl>
+                <dl>
+                    <dt><span>Q</span>“毛刺”及“震痕”产生的原因及解决思路有哪些？</dt>
+                    <dd><span>A</span>“毛刺”和“震痕”是在挤压铝型材生产中常见的缺陷.“毛刺”不直观,不仔细观察或手摸较难发现；“震痕”是颗粒相对集中型材表面的表现....</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+F:\NET工作区\物流\物流公共部分\代码\DAL\bin\Debug\DAL.dll
+F:\NET工作区\物流\物流公共部分\代码\DAL\bin\Debug\DAL.pdb
+F:\NET工作区\物流\物流公共部分\代码\DAL\bin\Debug\Model.dll
+F:\NET工作区\物流\物流公共部分\代码\DAL\bin\Debug\DB.dll
+F:\NET工作区\物流\物流公共部分\代码\DAL\bin\Debug\Common.dll
+F:\NET工作区\物流\物流公共部分\代码\DAL\bin\Debug\Model.pdb
+F:\NET工作区\物流\物流公共部分\代码\DAL\bin\Debug\DB.pdb
+F:\NET工作区\物流\物流公共部分\代码\DAL\bin\Debug\Common.pdb
+F:\NET工作区\物流\物流公共部分\代码\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\NET工作区\物流\物流公共部分\代码\DAL\obj\Debug\DAL.dll
+F:\NET工作区\物流\物流公共部分\代码\DAL\obj\Debug\DAL.pdb
+F:\NET工作区\Logistics\物流公共部分\代码\DAL\bin\Debug\DAL.dll
+F:\NET工作区\Logistics\物流公共部分\代码\DAL\bin\Debug\DAL.pdb
+F:\NET工作区\Logistics\物流公共部分\代码\DAL\bin\Debug\Model.dll
+F:\NET工作区\Logistics\物流公共部分\代码\DAL\bin\Debug\DB.dll
+F:\NET工作区\Logistics\物流公共部分\代码\DAL\bin\Debug\Common.dll
+F:\NET工作区\Logistics\物流公共部分\代码\DAL\bin\Debug\Model.pdb
+F:\NET工作区\Logistics\物流公共部分\代码\DAL\bin\Debug\DB.pdb
+F:\NET工作区\Logistics\物流公共部分\代码\DAL\bin\Debug\Common.pdb
+F:\NET工作区\Logistics\物流公共部分\代码\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\NET工作区\Logistics\物流公共部分\代码\DAL\obj\Debug\DAL.dll
+F:\NET工作区\Logistics\物流公共部分\代码\DAL\obj\Debug\DAL.pdb
+F:\NET工作区\展示-美安基金\代码\代码\DAL\bin\Debug\DAL.dll
+F:\NET工作区\展示-美安基金\代码\代码\DAL\bin\Debug\DAL.pdb
+F:\NET工作区\展示-美安基金\代码\代码\DAL\bin\Debug\Model.dll
+F:\NET工作区\展示-美安基金\代码\代码\DAL\bin\Debug\Model.pdb
+F:\NET工作区\展示-美安基金\代码\代码\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\NET工作区\展示-美安基金\代码\代码\DAL\obj\Debug\DAL.dll
+F:\NET工作区\展示-美安基金\代码\代码\DAL\obj\Debug\DAL.pdb
+F:\NET工作区\房地产\代码\DAL\bin\Debug\DAL.dll
+F:\NET工作区\房地产\代码\DAL\bin\Debug\DAL.pdb
+F:\NET工作区\房地产\代码\DAL\bin\Debug\DB.dll
+F:\NET工作区\房地产\代码\DAL\bin\Debug\Model.dll
+F:\NET工作区\房地产\代码\DAL\bin\Debug\DB.pdb
+F:\NET工作区\房地产\代码\DAL\bin\Debug\Model.pdb
+F:\NET工作区\房地产\代码\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\NET工作区\房地产\代码\DAL\obj\Debug\DAL.dll
+F:\NET工作区\房地产\代码\DAL\obj\Debug\DAL.pdb
+F:\NET工作区\上海皇闽铝业\代码\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\NET工作区\上海皇闽铝业\代码\DAL\obj\Debug\DAL.dll
+F:\NET工作区\上海皇闽铝业\代码\DAL\obj\Debug\DAL.pdb
+F:\NET工作区\上海皇闽铝业\代码\DAL\bin\Debug\DAL.dll
+F:\NET工作区\上海皇闽铝业\代码\DAL\bin\Debug\DAL.pdb
+F:\NET工作区\上海皇闽铝业\代码\DAL\bin\Debug\DB.dll
+F:\NET工作区\上海皇闽铝业\代码\DAL\bin\Debug\Model.dll
+F:\NET工作区\上海皇闽铝业\代码\DAL\bin\Debug\DB.pdb
+F:\NET工作区\上海皇闽铝业\代码\DAL\bin\Debug\Model.pdb
+F:\NET工作区\at your services\代码\DAL\bin\Debug\DAL.dll
+F:\NET工作区\at your services\代码\DAL\bin\Debug\DAL.pdb
+F:\NET工作区\at your services\代码\DAL\bin\Debug\DB.dll
+F:\NET工作区\at your services\代码\DAL\bin\Debug\Model.dll
+F:\NET工作区\at your services\代码\DAL\bin\Debug\DB.pdb
+F:\NET工作区\at your services\代码\DAL\bin\Debug\Model.pdb
+F:\NET工作区\at your services\代码\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\NET工作区\at your services\代码\DAL\obj\Debug\DAL.dll
+F:\NET工作区\at your services\代码\DAL\obj\Debug\DAL.pdb

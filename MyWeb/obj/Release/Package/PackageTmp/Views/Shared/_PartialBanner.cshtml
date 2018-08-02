@@ -1,0 +1,39 @@
+﻿<link href="/website/banner/css/banner.css" type="text/css" rel="stylesheet" media="all" />
+<link href="/website/banner/css/animate.min.css" type="text/css" rel="stylesheet" media="all" />
+<script type="text/javascript" src="/website/banner/js/banner.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#banner").THBanner();
+    });
+</script>
+<div id="banner" class="banner" style="overflow:hidden;">
+    <div class="banner-item animated" data-classin="fadeIn" data-classout="fadeOut delay10" data-time="400">
+        <div class="banner-img" style="background-image:url(/website/img/banner.jpg)"></div>
+        <div class="banner-text vbox box-h-center box-v-center">
+        </div>
+    </div>
+    <div class="banner-item animated" data-classin="fadeIn" data-classout="fadeOut delay10" data-time="400">
+        <div class="banner-img" style="background-image:url(/website/img/banner.jpg)"></div>
+        <div class="banner-text vbox box-h-center box-v-center">
+        </div>
+    </div>
+    <div class="banner-tool">
+    </div>
+</div>
+<link href="~/website/css/search.css" rel="stylesheet" type="text/css" media="all" />
+<div class="search_div">
+    <div class="container">
+        <div class="search_input_div">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-1">
+                    <form action="/Product/List" method="get">
+                        <input type="text" name="keywork" placeholder="请输入关键字进行搜索" /><button type="submit">搜索</button>
+                    </form>
+                </div>
+                <div class="col-md-2">
+                    <label style="color:#333333; font-size:14px; margin-bottom:0;">热门搜索：</label><a style="color:#5cb37f; margin-right:10px;" href="/Product/List?keywork=围栏">围栏</a><a style="color:#5cb37f;" href="/Product/List?keywork=防护罩">防护罩</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

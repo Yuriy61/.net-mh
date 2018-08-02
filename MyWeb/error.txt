@@ -1,0 +1,4 @@
+结果3：1
+1：E:\NET工作区\物流项目搭建日记\代码\MyWeb\/Temp/TempIDCardFile/f74e595f1a7957d813b4f558ed2dcc9e\IDCard
+2：E:\NET工作区\物流项目搭建日记\代码\MyWeb\/Temp/TempIDCardFile/f74e595f1a7957d813b4f558ed2dcc9e\IDCard
+2：E:\NET工作区\物流项目搭建日记\代码\MyWeb\/Temp/TempIDCardFile/f74e595f1a7957d813b4f558ed2dcc9e\IDCard

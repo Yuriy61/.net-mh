@@ -1,0 +1,382 @@
+﻿
+.pro_info{
+    background-color:#fff;
+    padding-bottom:60px;
+}
+    .pro_info .title {
+        height: 82px;
+        line-height: 82px;
+        background: -webkit-linear-gradient(left, #028a96, #40af6d); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(right, #028a96, #40af6d); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(right, #028a96, #40af6d); /* Firefox 3.6 - 15 */
+        background: linear-gradient(to right, #028a96, #40af6d); /* 标准的语法 */
+        text-align:center;
+    }
+    .pro_info .title_list{
+        background-color:#f2f2f2;
+        padding:0 10px 10px 10px;
+        overflow:hidden;
+    }
+        .pro_info .title_list > a {
+            display:block;
+            width:100%;
+            margin-top:10px;
+            height:50px;
+            line-height:50px;
+            text-align:center;
+            background-color:#e7e7e9;
+            border:1px dashed #f8f8f8;
+            font-size:14px;
+            color:#6a6a6a;
+            text-decoration:none;
+        }
+        .pro_info .title_list > a:hover,.pro_info .title_list > a.cur{
+            background-color:#deeae6;
+            border:1px dashed #048b95;
+            color:#018997;
+        }
+        .pro_info .title_list > ul{
+            list-style:none;
+            margin:0;
+            padding:0;
+            transition: all .8s;
+            -moz-transition: all .8s;	/* Firefox 4 */
+            -webkit-transition: all .8s;	/* Safari 和 Chrome */
+            -o-transition: all .8s;	/* Opera */
+            overflow:hidden;
+            height:0;
+        }
+        .pro_info .title_list > ul li{
+            text-align:center;
+            padding:10px 0;
+        }
+        .pro_info .title_list > ul a{
+            color:#7a7a7a;
+            text-decoration:none;
+            font-size:14px;
+        }
+        .pro_info .title_list > ul a:hover,.pro_info .title_list > ul a.cur{
+            color:#018997;
+        }
+    .pro_info .title_right {
+        height:50px;
+        line-height:50px;
+        margin-top:16px;
+    }
+    .pro_info .title_right>ul{
+        background: -webkit-linear-gradient(left, #018997, #41af6d); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(right, #018997, #41af6d); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(right, #018997, #41af6d); /* Firefox 3.6 - 15 */
+        background: linear-gradient(to right, #018997, #41af6d); /* 标准的语法 */
+        display:block;
+        float:left;
+        width:80%;
+       list-style:none;
+       margin:0;
+       padding:0;
+    }
+    .pro_info .title_right>ul li{
+        display:block;
+        width:25%;
+        height:50px;
+        line-height:50px;
+        text-align:center;
+        float:left;
+    }
+    .pro_info .title_right>ul li a{
+        color:#ffffff;
+        font-size:14px;
+    }
+    .pro_info .title_right>ul li a:hover,.pro_info .title_right>ul li a.cur{
+        font-weight:bold;
+        text-decoration:underline;
+    }
+    .pro_info .title_right>a{
+        display:block;
+        float:right;
+        width:20%;
+        text-align:right;
+        color:#018997;
+        font-weight:bold;
+        font-size:14px;
+    }
+    .pro_info .pro_list{
+        overflow:hidden;
+    }
+    .pro_info .pro_list a{
+        display:block;
+        overflow:hidden;
+        width:100%;
+        margin-top:30px;
+        position:relative;
+    }
+        .pro_info .pro_list a img {
+            width:100%;
+        }
+        .pro_info .pro_list a p{
+            display:none;
+            position:absolute;
+            width:100%;
+            height:100%;
+            left:0;
+            top:0;
+            text-align:center;
+            padding:0;
+            margin:0;
+            padding-top:25%;
+            z-index:10;
+            color:#fff;
+            font-size:14px;
+            font-weight:bold;
+        }
+        .pro_info .pro_list a:hover p{
+            display:block;
+        }
+        .pro_info .pro_list a:hover p:after{
+            position:absolute;
+            content:' ';
+            display:block;
+            width:100%;
+            height:100%;
+            left:0;
+            top:0;
+            background-color:#000;
+            z-index:-1;
+            opacity:.5;
+
+        }
+
+
+        .pro_temp_elite .pro_temp_elite_title{
+            color:#333333; font-size:12px; height:45px;line-height:45px;border-bottom:1px solid #f4f4f4;
+            font-weight:bold;
+            position:relative;
+        }
+        .pro_temp_elite .pro_temp_elite_title:before{
+            content:' ';
+            display:block;
+            width:100px;
+            height:3px;
+            background: -webkit-linear-gradient(left, #018997, #41af6d); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(right, #018997, #41af6d); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(right, #018997, #41af6d); /* Firefox 3.6 - 15 */
+            background: linear-gradient(to right, #018997, #41af6d); /* 标准的语法 */
+            position:absolute;
+            bottom:0;
+            left:0;
+        }
+        .pro_temp_elite .pro_temp_elite_list > a{
+            display:block;
+            width:100%;
+            height:71px;
+            text-decoration:none;
+            color:#666666;
+            margin-top:25px;
+        }
+        .pro_temp_elite .pro_temp_elite_list > a img{
+            float:left;
+            width:71px;
+            height:71px;
+            margin-right:10px;
+        }
+        .pro_temp_elite .pro_temp_elite_list > a > p{
+            height:30px;
+            line-height:30px;
+            padding:0;
+            margin:0;
+        }
+        .pro_temp_elite .pro_temp_elite_list > a > p:nth-child(1){
+            color:#333333;
+            font-weight:bold;
+        }
+        .pro_pager{
+            padding-top:10px;
+            margin-top:20px;
+            text-align:center;
+        }
+        .pro_pager a{
+            display:inline-block;
+            border:1px solid #058a89;
+            color:#058a89;
+            font-size:12px;
+            height:35px;
+            min-width:35px;
+            text-align:center;
+            line-height:35px;
+            padding:0 10px;
+            text-decoration:none;
+        }
+        .pro_pager a.cur,.pro_pager a:hover{
+            background-color:#058a89;
+            color:#fff;
+        }
+        .pro_pager a.disabled{
+            border:1px solid #999999;
+            color:#999999;
+        }
+        .pro_pager a.disabled:hover{
+            border:1px solid #999999;
+            color:#999999;
+            background-color:#fff;
+        }
+        .star_product .star_product_title{
+            color:#666666; font-size:16px; height:45px;line-height:45px;border-bottom:1px solid #f4f4f4;
+            font-weight:bold;
+            position:relative;
+        }
+        .star_product .star_product_title b{
+            color:#058a89;
+            font-size:22px;
+        }
+        .star_product .star_product_title:before{
+            content:' ';
+            display:block;
+            width:220px;
+            height:3px;
+            background: -webkit-linear-gradient(left, #018997, #41af6d); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(right, #018997, #41af6d); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(right, #018997, #41af6d); /* Firefox 3.6 - 15 */
+            background: linear-gradient(to right, #018997, #41af6d); /* 标准的语法 */
+            position:absolute;
+            bottom:0;
+            left:0;
+        }
+
+
+        .star_product .product_detail .product_detail1{
+            width:100%;
+            overflow:hidden;
+            box-shadow:#f3f3f3 0px 4px 10px 1px;
+        }
+            .star_product .product_detail .product_detail1 .product_img_div {
+                float: left;
+                width: 50%;
+                position:relative;
+                z-index:1;
+            }
+            .star_product .product_detail .product_detail1 .product_img_div img{
+                width:100%;
+            }
+
+                .star_product .product_detail .product_detail1 .product_img_div:before, .star_product .product_detail .product_detail1 .product_img_div:after {
+                    content: '\e824';
+                    position: absolute;
+                    z-index: 10;
+                    top: 45%;
+                    display: block;
+                    width: 45px;
+                    height: 55px;
+                    background-color: #058a89;
+                    font-family: 'revicons';
+                    line-height: 55px;
+                    text-align: center;
+                    color: #fff;
+                    cursor: pointer;
+                    font-weight: bold;
+                    font-size: 26px;
+                    display: none;
+                }
+                .star_product .product_detail .product_detail1 .product_img_div:after {
+                    content: '\e825';
+                    right: 0;
+                }
+                .star_product .product_detail .product_detail1 .product_img_div:hover:before, .star_product .product_detail .product_detail1 .product_img_div:hover:after {
+                    /*display:block;*/
+                }
+            .star_product .product_detail .product_detail1 .product_info {
+                float:left;
+                width:50%;
+            }
+            .star_product .product_detail .product_detail1 .product_info{
+                padding-left:20px;
+            }
+            .star_product .product_detail .product_detail1 .product_info p{
+                padding:0;
+                margin:0;
+                color:#666666;
+                font-size:12px;
+            }
+            .star_product .product_detail .product_detail2{
+                margin-top:20px;
+            }
+            .star_product .product_detail .product_detail2 img{
+                width:70px;
+                height:70px;
+                border:2px solid #fff;
+                cursor:pointer;
+            }
+            .star_product .product_detail .product_detail2 img:hover,.star_product .product_detail .product_detail2 img.cur{
+                border:2px solid #359d6c;
+            }
+            .star_product .product_detail .product_detail3{
+                background-color:#f8f8f8; height:50px;margin-top:20px;
+            }
+            .star_product .product_detail .product_detail3 span{
+                display:block;
+                float:left;
+                width:140px;
+                height:50px;
+                line-height:50px;
+                text-align:center;
+                font-size:16px;
+                color:#575153;
+                cursor:pointer;
+            }
+            .star_product .product_detail .product_detail3 span.cur{
+                background-color:#058a89;
+                color:#fff;
+            }
+
+            .bluebtn{
+                border:0;
+                background-color:#018997;
+                padding:0 20px;
+                height:45px;
+                line-height:45px;
+                min-width:100px;
+                text-align:center;
+                color:#fff;
+                font-size:14px;
+            }
+
+.elite_product a {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+}
+    .elite_product a img {
+        width: 100%;
+    }
+    .elite_product a p {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        padding-top: 25%;
+        z-index: 10;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .elite_product a:hover p {
+        display: block;
+    }
+        .elite_product a:hover p:after {
+            position: absolute;
+            content: ' ';
+            display: block;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: #000;
+            z-index: -1;
+            opacity: .5;
+        }

@@ -1,0 +1,90 @@
+﻿@model List<AMW.Model.Entity.MldAdv>
+@{
+    Layout = "~/Areas/WebAdmin/Views/Shared/_LayoutMetronic.cshtml";
+}
+<!-- END PAGE BAR -->
+<!-- BEGIN PAGE TITLE-->
+<h3 class="page-title">
+    List
+</h3>
+
+@if (ViewBag.Error != "none")
+{
+    <div class="alert alert-block alert-danger fade in">
+        <button type="button" class="close" data-dismiss="alert"></button>
+        <p>@ViewBag.Error</p>
+    </div>
+}
+@if (ViewBag.Success == "ok")
+{
+    <div class="alert alert-block alert-success fade in">
+        <button type="button" class="close" data-dismiss="alert"></button>
+        <p>Success</p>
+    </div>
+}
+
+<div class="row" id="list-content">
+    <div class="col-md-12">
+        <div class="portlet light portlet-fit portlet-datatable bordered">
+            <div class="portlet-title">
+                <div class="tools" style="padding:0; margin:0;float:left;">
+                    <a class="inline-block btn btn-default btn-sm" style="height:auto;" href="/WebAdmin/Adv/Index">Add</a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-container">
+                    <div id="datatable_ajax_wrapper" class="dataTables_wrapper dataTables_extended_wrapper no-footer">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover table-checkable order-column dataTable no-footer">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="text-center">Adv Type</th>
+                                        <th class="text-center">Title</th>
+                                        <th class="text-center">Pic</th>
+                                        <th class="text-center">Is Show</th>
+                                        <th class="text-center">Priority</th>
+                                        <th class="text-center">Opt</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr role="row">
+                                            <td class="text-center">@(((AMW.Model.Enum.EnumAdvType)item.AdvType).GetDescriptionByName()) </td>
+                                            <td class="text-center">@item.Title</td>
+                                            <td class="text-center"><img src="@item.Img" style="max-height:30px;" /></td>
+                                            <td class="text-center">@Html.Raw(item.IsShow.GetYesOrNo())</td>
+                                            <td class="text-center">@item.Priority</td>
+                                            <td class="text-center">
+                                                <a class="btn green-meadow btn-sm" href="/WebAdmin/Adv/Edit/@item.ID">Edit</a>
+                                                <button type="button" class="btn btn-danger btn-sm" onclick="Del(@item.ID)">Del</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+                        @Html.Partial("_PartialPager", ViewBag.Pager as AMW.Model.Pager)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End: life time stats -->
+    </div>
+</div>
+
+<script type="text/javascript">
+    function Del(id)
+    {
+        if (confirm("Are you sure you want to do this？")) {
+            $.post("/WebAdmin/Adv/Del", { id: id }).done(function (d) {
+                if (d.ok) {
+                    window.location.href = "/WebAdmin/Adv/List";
+                } else {
+                    alert(d.error);
+                }
+            });
+        }
+    }
+</script>

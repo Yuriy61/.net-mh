@@ -1,0 +1,84 @@
+﻿@model List<AMW.Model.Entity.MldProduct>
+@{
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+@Html.Partial("_PartialBanner")
+
+@Html.Partial("_PartialBreadcurmb",0)
+
+<script type="text/javascript">
+    $(function () {
+        $(".nav_div a").eq(@ViewBag.ID).addClass("cur");
+    });
+</script>
+<link href="~/website/css/proinfo.css" rel="stylesheet" type="text/css" media="all" />
+<div class="pro_info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+               @Html.Partial("_PartialProLeft")
+            </div>
+            <div class="col-md-7">
+                <div class="title_right">
+                    <ul>
+                        <li ><a href="#" class="cur">产品列表</a></li>
+                    </ul>
+                </div>
+                <div class="pro_list">
+                    <div class="row">
+                        @{
+                            bool enterFlag = (bool)ViewBag.EnableEnterPage;
+                            int i1 = 0;
+                            foreach (var item in Model)
+                            {
+                                i1++;
+                                <div class="col-md-4"><a href="@(enterFlag ? "/Product/Index/"+item.ID : "javascript:void(0)")"><img src="@item.Img" /><p>@item.Name</p></a></div>
+                                if (i1 % 3 == 0)
+                                {
+                                    @Html.Raw("</div><div class=\"row\">");
+
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="pro_pager">
+                    <a href="#" class="disabled">首页</a>
+                    <a href="#">上一页</a>
+                    <a href="#">1</a>
+                    <a href="#">下一页</a>
+                    <a href="#">末页</a>
+                </div>
+                <div class="star_product">
+                    <div class="star_product_title" style="margin-bottom:10px;"><b>明星产品</b> / STAR PRODUCT</div>
+                    <div style="width:99.9%;">
+                        <link rel="stylesheet" href="/website/js/AmazeUI/assets/css/amazeui.min.css">
+                        <link rel="stylesheet" href="/website/js/AmazeUI/assets/css/app.css">
+                        <style type="text/css">
+                            .am-slider-default .am-control-nav li a{
+                                width:36px !important;
+                                border-radius:0 !important;
+                                background-color:#d9d9d9;
+                            }
+                        </style>
+                        <div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0">
+                            <ul class="am-slides">
+                                <li><a href="#"><img src="~/website/img/star_product_img.png" /></a></li>
+                                <li><a href="#"><img src="~/website/img/star_product_img.png" /></a></li>
+                            </ul>
+                        </div>
+                        <script src="/website/js/AmazeUI/assets/js/amazeui.min.js"></script>
+                        <script type="text/javascript">
+                            $(function () {
+                                $('.am-slider').each(function () {
+                                    $(this).flexslider();
+                                });
+                            })
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

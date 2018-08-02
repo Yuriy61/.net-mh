@@ -1,0 +1,103 @@
+﻿@model AMW.Model.Pager
+<form action="@Model.SubmitLink" method="get" id="pagerForm">
+    <input type="hidden" name="pageSize" id="pageSize" value="@Model.PageSize" />
+    <input type="hidden" name="pageIndex" id="pageIndex" value="@Model.PageIndex" />
+    @{
+        if (Model.List!=null && Model.List.Count>0)
+        {
+            foreach (var item in Model.List)
+            {
+                <input type="hidden" name="@item.Key" value="@item.Value" />
+            }    
+        }   
+    }
+</form>
+<input type="hidden" id="pageCount" value="@Model.PageCount" />
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div style="width:250px;float:left;margin-left:10px; margin-bottom:10px;">
+            <div class="input-group input-group-sm">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" onclick="pager.First()">首页</button>
+                    <button class="btn btn-default" type="button" onclick="pager.Prev()">上一页</button>
+                </span>
+                <input type="text" readonly style="text-align:center; padding:0;" class="form-control" value="@Model.PageIndex/@Model.PageCount">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" onclick="pager.Next()">下一页</button>
+                    <button class="btn btn-default" type="button" onclick="pager.Last()">尾页</button>
+                </span>
+            </div>
+        </div>
+        <div style="float:left; margin-left:10px;width:95px;">
+            <div class="input-group input-group-sm">
+                <input type="number" min="1" step="1" style="text-align:center; padding:0;" id="txtPageIndex" class="form-control" value="@Model.PageIndex">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" onclick="pager.Change()">跳转</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var pager = (function () {
+        var submit = function () {
+            $("#pagerForm").submit();
+        }
+        var first = function () {
+            $("#pageIndex").val(1);
+            submit();
+        }
+        var next = function () {
+            var val = parseInt($("#pageIndex").val()) + 1;
+            var pageCount = parseInt( $("#pageCount").val());
+            if (val > pageCount) {
+                val = pageCount;
+            }
+            $("#pageIndex").val(val);
+            submit();
+        }
+        var prev = function () {
+            var val = parseInt($("#pageIndex").val()) - 1;
+            if (val <= 0) {
+                val = 1;
+            }
+            $("#pageIndex").val(val);
+            submit();
+        }
+        var last = function () {
+            var pageCount = parseInt($("#pageCount").val());
+            $("#pageIndex").val(pageCount);
+            submit();
+        }
+        var change = function(){
+            var val = parseInt($("#txtPageIndex").val());
+            if (val <= 0) {
+                val = 1;
+            }
+            var pageCount = parseInt($("#pageCount").val());
+            if (val > pageCount ) {
+                val = pageCount;
+            }
+            $("#pageIndex").val(val);
+            submit();
+        }
+        var changeSize = function () {
+            var val = $.trim($(this).text());
+            $("#pageSize").val(val);
+            $("#pageIndex").val(1);
+            submit();
+        }
+        return {
+            First: first,
+            Next: next,
+            Prev: prev,
+            Last: last,
+            Change: change,
+            ChangeSize: changeSize
+        }
+    })();
+    $(function () {
+        $(".dropdown-menu>li>a").on("click", pager.ChangeSize);
+    });
+</script>
