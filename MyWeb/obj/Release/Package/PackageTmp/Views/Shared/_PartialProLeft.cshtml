@@ -28,7 +28,7 @@
                     <ul data-role="ul">
                         @foreach (var it in tempList)
                         {
-                            <li><a href="/Product/List?cid=@it.ID">@it.Name</a></li>
+                            <li><a data-id="@it.ID" href="/Product/List?cid=@it.ID">@it.Name</a></li>
                         }
                     </ul>
                 }

@@ -16,35 +16,92 @@
                 <div class="title">
                     <img src="~/website/img/pro_info.png" />
                 </div>
+                <script type="text/javascript">
+                    $(function () {
+                        $(".pro_info .title_list > a").click(function () {
+                            $(".pro_info .title_list > a").removeClass("cur");
+                            $(this).addClass("cur");
+                            
+                            $.post("/Home/GetHomeProduct", { cid: $(this).attr("data-id") }).done(function (d) {
+                                $(".pro_info .title_right>ul").html("");
+                                $("#pc").html("");
+                                $("#proMore").attr("href", "/Product/List?id=" + $(this).attr("data-id"));
+                                if(!!d && !!d.ok && !!d.data){
+                                    if (!!d.data.categoryList && d.data.categoryList.length > 0) {
+                                        d.data.categoryList.forEach(function (category) {
+                                            $(".pro_info .title_right>ul").append($("<li><a href=\"javascript:void(0)\" onclick=\"clickCategory(" + category.ID + ",this)\">" + category.Name + "</a></li>"));
+                                        })
+                                    }
+                                    if (!!d.data.proList && !!d.data.proList.length > 0) {
+                                        var idx = 0;
+                                        var html = "<div class=\"row\">";
+                                        d.data.proList.forEach(function (pro) {
+                                            idx++;
+                                            html += "<div class=\"col-md-4\"><a class='aa' href=\"/Product/Index/"+pro.ID+"\"><img src=\""+pro.Img+"\" /><p>"+pro.Name+"</p></a></div>";
+                                            if(idx%3==0){
+                                                html += "</div><div class=\"row\">";
+                                            }
+                                        });
+                                        html += "</div>";
+                                        $("#pc").html(html);
+                                    }
+                                }
+                            });
+                        });
+                    });
+                    function clickCategory(id,obj) {
+                        $(".pro_info .title_right>ul li a").removeClass("cur");
+                        $(obj).addClass("cur");
+
+                        $.post("/Home/GetHomeProduct2", { cid: id }).done(function (d) {
+                            $("#pc").html("");
+                            if (!!d && !!d.ok && !!d.data) {
+                                if (!!d.data.proList && !!d.data.proList.length > 0) {
+                                    var idx = 0;
+                                    var html = "<div class=\"row\">";
+                                    d.data.proList.forEach(function (pro) {
+                                        idx++;
+                                        html += "<div class=\"col-md-4\"><a class='aa' href=\"/Product/Index/" + pro.ID + "\"><img src=\"" + pro.Img + "\" /><p>" + pro.Name + "</p></a></div>";
+                                        if (idx % 3 == 0) {
+                                            html += "</div><div class=\"row\">";
+                                        }
+                                    });
+                                    html += "</div>";
+                                    $("#pc").html(html);
+                                }
+                            }
+                        });
+                    }
+                </script>
                 <div class="title_list">
-                    <a href="#" data-rowid="pc1">工作台</a>
-                    <a href="#" data-rowid="pc2">工业铝型材</a>
-                    <a href="#" data-rowid="pc3">围栏及防护罩</a>
-                    <a href="#" data-rowid="pc4">工业梯/踏台/工业平台</a>
-                    <a href="#" data-rowid="pc5">铝型材配件</a>
-                    <a href="#" data-rowid="pc6">开模定制 </a>
-                    <a href="#" data-rowid="pc7">铝型材框架应用</a>
+                    <a href="javascript:void(0)" data-id="1">工作台</a>
+                    <a href="javascript:void(0)" data-id="2">工业铝型材</a>
+                    <a href="javascript:void(0)" data-id="3">围栏及防护罩</a>
+                    <a href="javascript:void(0)" data-id="4">工业梯/踏台/工业平台</a>
+                    <a href="javascript:void(0)" data-id="5">铝型材配件</a>
+                    <a href="javascript:void(0)" data-id="6">开模定制 </a>
+                    <a href="javascript:void(0)" data-id="7">铝型材框架应用</a>
                 </div>
             </div>
             <div class="col-md-7">
                 <div class="title_right">
                     <ul>
-                        <li><a href="/">工作台</a></li>
-                        <li><a href="#">工业铝型材</a></li>
-                        <li><a href="#">围栏及防护罩</a></li>
-                        <li><a href="#">铝型材框架应用</a></li>
+                        <li><a href="javascript:void(0)" onclick="clickCategory(8,this)">防静电工作台</a></li>
+                        <li><a href="javascript:void(0)" onclick="clickCategory(9, this)">流水线工作台</a></li>
+                        <li><a href="javascript:void(0)" onclick="clickCategory(10, this)">车间工作台</a></li>
+                        <li><a href="javascript:void(0)" onclick="clickCategory(11, this)">铝型材工作台</a></li>
                     </ul>
-                    <a href="/Product/List">MORE</a>
+                    <a href="/Product/List?id=1" id="proMore">MORE</a>
                 </div>
                 <div class="pro_list">
-                    <div id="pc1">
+                    <div id="pc">
                         <div class="row">
                             @{
                                 int i1 = 0;
                                 foreach (var item in ViewBag.ProList1 as List<AMW.Model.Entity.MldProduct>)
                                 {
                                     i1++;
-                                    <div class="col-md-4"><a href="/Product/Index/@item.ID"><img src="@item.Img" /><p>@item.Name</p></a></div>
+                                    <div class="col-md-4"><a class="aa" href="/Product/Index/@item.ID"><img src="@item.Img" /><p>@item.Name</p></a></div>
                                     if (i1 % 3 == 0)
                                     {
                                         @Html.Raw("</div><div class=\"row\">");
@@ -54,124 +111,11 @@
                             }
                         </div>
                     </div>
-                    <div id="pc2" class="hide">
-                        <div class="row">
-                            @{
-                                int i2 = 0;
-                                foreach (var item in ViewBag.ProList2 as List<AMW.Model.Entity.MldProduct>)
-                                {
-                                    i2++;
-                                    <div class="col-md-4"><a href="/Product/Index/@item.ID"><img src="@item.Img" /><p>@item.Name</p></a></div>
-                                    if (i2 % 3 == 0)
-                                    {
-                                        @Html.Raw("</div><div class=\"row\">");
-
-                                    }
-                                }
-                            }
-                        </div>
-                    </div>
-                    <div class="hide" id="pc3">
-                        <div class="row hide">
-                            @{
-                                int i3 = 0;
-                                foreach (var item in ViewBag.ProList3 as List<AMW.Model.Entity.MldProduct>)
-                                {
-                                    i3++;
-                                    <div class="col-md-4"><a href="/Product/Index/@item.ID"><img src="@item.Img" /><p>@item.Name</p></a></div>
-                                    if (i3 % 3 == 0)
-                                    {
-                                        @Html.Raw("</div><div class=\"row\">");
-
-                                    }
-                                }
-                            }
-                        </div>
-                    </div>
-                    <div id="pc4" class="hide">
-                        <div class="row">
-                            @{
-                                int i4 = 0;
-                                foreach (var item in ViewBag.ProList4 as List<AMW.Model.Entity.MldProduct>)
-                                {
-                                    i4++;
-                                    <div class="col-md-4"><a href="/Product/Index/@item.ID"><img src="@item.Img" /><p>@item.Name</p></a></div>
-                                    if (i4 % 3 == 0)
-                                    {
-                                        @Html.Raw("</div><div class=\"row\">");
-
-                                    }
-                                }
-                            }
-                        </div>
-                    </div>
-                    <div id="pc5" class="hide">
-                        <div class="row">
-                            @{
-                                int i5 = 0;
-                                foreach (var item in ViewBag.ProList5 as List<AMW.Model.Entity.MldProduct>)
-                                {
-                                    i5++;
-                                    <div class="col-md-4"><a href="/Product/Index/@item.ID"><img src="@item.Img" /><p>@item.Name</p></a></div>
-                                    if (i5 % 3 == 0)
-                                    {
-                                        @Html.Raw("</div><div class=\"row\">");
-
-                                    }
-                                }
-                            }
-                        </div>
-                    </div>
-                    <div class="hide" id="pc6">
-                        <div class="row">
-                            @{
-                                int i6 = 0;
-                                foreach (var item in ViewBag.ProList6 as List<AMW.Model.Entity.MldProduct>)
-                                {
-                                    i6++;
-                                    <div class="col-md-4"><a href="javascript:void(0)"><img src="@item.Img" /><p>@item.Name</p></a></div>
-                                    if (i6 % 3 == 0)
-                                    {
-                                        @Html.Raw("</div><div class=\"row\">");
-
-                                    }
-                                }
-                            }
-                        </div>
-                    </div>
-                    <div class="hide" id="pc7">
-                        <div class="row">
-                            @{
-                                int i7 = 0;
-                                foreach (var item in ViewBag.ProList7 as List<AMW.Model.Entity.MldProduct>)
-                                {
-                                    i7++;
-                                    <div class="col-md-4"><a href="/Product/Index/@item.ID"><img src="@item.Img" /><p>@item.Name</p></a></div>
-                                    if (i7 % 3 == 0)
-                                    {
-                                        @Html.Raw("</div><div class=\"row\">");
-
-                                    }
-                                }
-                            }
-                        </div>
-                    </div>
-                    
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    $(function () {
-        $(".pro_info .title_list > a").hover(function () {
-            $(".pro_info .title_list > a").removeClass("cur");
-            $(this).addClass("cur");
-            $(".pro_info .pro_list>div").addClass("hide");
-            $("#" + $(this).attr("data-rowid")).removeClass("hide");
-        });
-    });
-</script>
 
 <div class="pro_show">
     <div class="container">
@@ -240,14 +184,19 @@
                 <div style="text-align:center;margin-bottom:55px;"><img src="~/website/img/area.png" /></div>
                 <div class="pro_list">
                     <div class="row">
-                        <div class="col-md-4"><a href="#"><img src="~/website/img/area1.jpg" /><p><label>电子电气行业</label><br />服务的客户有上海电气、三菱、西门子等</p></a></div>
-                        <div class="col-md-4"><a href="#"><img src="~/website/img/area2.jpg" /><p><label>航空航天行业</label><br />航天航空行业 服务的客户有 沈飞 哈飞 西飞 江南航天 凌云 等</p></a></div>
-                        <div class="col-md-4"><a href="#"><img src="~/website/img/area3.jpg" /><p><label>物流设备制造行业</label><br />物流设备制造行业 服务的客户有 安吉物流 德玛泰克 等</p></a></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4"><a href="#"><img src="~/website/img/area4.jpg" /><p><label>汽车制造行业</label><br />汽车制造行业 服务的客户有 上海大众 上汽集团 长安汽车 比亚迪  一汽集团 等</p></a></div>
-                        <div class="col-md-4"><a href="#"><img src="~/website/img/area5.jpg" /><p><label>机器人行业</label><br />工业机器人行业 服务的客户有 ABB 库卡 发那科 柯马 新松 等</p></a></div>
-                        <div class="col-md-4"><a href="#"><img src="~/website/img/机械设备制造行业.jpg" /><p><label>机械设备制造行业</label><br />机械设备行业 服务的客户有 卡尔蔡司  三一重工 中车集团 安德里茨 艾克 瑞光 等</p></a></div>
+                        @{
+                            List<AMW.Model.Entity.MldApplicationArea> applicationAreaList = ViewBag.ApplicateionArea as List<AMW.Model.Entity.MldApplicationArea>;
+                            int idxApplicationArea = 0;
+                            foreach (var item in applicationAreaList)
+                            {
+                                idxApplicationArea++;
+                                <div class="col-md-4"><a href="/ApplicationArea/Index/@item.ID"><img src="@item.HomeBg" /><p><label>@item.Name</label><br />@item.SubHead</p></a></div>
+                                if (idxApplicationArea % 3 == 0)
+                                {
+                                    @Html.Raw("</div><div class=\"row\">");
+                                }
+                            }
+                        }
                     </div>
                 </div>
             </div>

@@ -1,0 +1,157 @@
+﻿@model AMW.Model.Entity.MldApplicationArea
+@{
+    Layout = "~/Areas/WebAdmin/Views/Shared/_LayoutMetronic.cshtml";
+}
+<!-- END PAGE BAR -->
+<!-- BEGIN PAGE TITLE-->
+<h3 class="page-title">
+    Edit
+    <small></small>
+</h3>
+
+<div class="row" id="list-content">
+    <div class="col-md-12">
+        <div class="portlet light portlet-fit portlet-datatable bordered">
+            <div class="portlet-body">
+                <form enctype="multipart/form-data" action="/WebAdmin/ApplicationArea/Edit" method="post" class="form-horizontal">
+                    <div class="form-body">
+
+                        @if (ViewBag.Error != "none")
+                        {
+                            <div class="alert alert-block alert-danger fade in">
+                                <button type="button" class="close" data-dismiss="alert"></button>
+                                <p>@ViewBag.Error</p>
+                            </div>
+                        }
+                        @if (ViewBag.Success == "ok")
+                        {
+                            <div class="alert alert-block alert-success fade in">
+                                <button type="button" class="close" data-dismiss="alert"></button>
+                                <p>Success</p>
+                            </div>
+                        }
+                        <div class="form-group">
+                            <label class="control-label col-md-2">
+                                名称
+                            </label>
+                            <div class="col-md-6">
+                                <input type="text" name="name" class="form-control" value="@Model.Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">
+                                介绍
+                            </label>
+                            <div class="col-md-6">
+                                <input type="text" name="subhead" class="form-control" value="@Model.SubHead">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">
+                                图标
+                            </label>
+                            <div class="col-md-6">
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                                        <img src="@Model.Icon" />
+                                    </div>
+                                    <div>
+                                        <span class="btn red btn-outline btn-file">
+                                            <span class="fileinput-new"> Select image </span>
+                                            <span class="fileinput-exists"> Change </span>
+                                            <input type="file" name="icon" accept="image/gif,image/jpeg,image/png">
+                                        </span>
+                                        <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">
+                                背景图片
+                                <span class="required" aria-required="true"> * </span>
+                            </label>
+                            <div class="col-md-6">
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                                        <img src="@Model.HomeBg" />
+                                    </div>
+                                    <div>
+                                        <span class="btn red btn-outline btn-file">
+                                            <span class="fileinput-new"> Select image </span>
+                                            <span class="fileinput-exists"> Change </span>
+                                            <input type="file" name="homebg" accept="image/gif,image/jpeg,image/png">
+                                        </span>
+                                        <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">
+                                是否首页显示
+                            </label>
+                            <div class="col-md-6">
+                                <select class="form-control" name="homeshowflag">
+                                    <option value="0" @(Model.HomeShowFlag.Equals(0) ? "selected" : "")>否</option>
+                                    <option value="1" @(Model.HomeShowFlag.Equals(1) ? "selected" : "")>是</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">
+                                介绍
+                            </label>
+                            <div class="col-md-6">
+                                <div id="content_div">@Html.Raw(Model.Content)</div>
+                                <textarea name="content" style="display:none;" id="content"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <input type="hidden" name="id" value="@Model.ID" />
+                                <button type="submit" class="btn green" onclick="return submitData()">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End: life time stats -->
+    </div>
+</div>
+
+<script type="text/javascript">
+    function submitData() {
+        $('#content').val($('#content_div').code());
+        return true;
+    }
+    $('#content_div').summernote({
+        height: 300,
+        onImageUpload: function (files) {
+            var formData = new FormData();
+            formData.append("file", files[0]);
+            $.ajax({
+                data: formData,
+                type: "POST",
+                url: "/Image/Upload",
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    if (data.ok) {
+                        $('#content_div').summernote('insertImage', data.url, 'img')
+                    } else {
+                        alert(data.error);
+                    }
+                },
+                error: function () {
+                    alert("Error！");
+                }
+            })
+        }
+    });
+</script>

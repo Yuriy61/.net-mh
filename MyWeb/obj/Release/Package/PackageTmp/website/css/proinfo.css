@@ -30,7 +30,7 @@
             color:#6a6a6a;
             text-decoration:none;
         }
-        .pro_info .title_list > a:hover,.pro_info .title_list > a.cur{
+        .pro_info .title_list > a.cur{
             background-color:#deeae6;
             border:1px dashed #048b95;
             color:#018997;
@@ -74,22 +74,27 @@
        list-style:none;
        margin:0;
        padding:0;
+       border-radius:5px 5px 0 0;
     }
     .pro_info .title_right>ul li{
         display:block;
         width:25%;
         height:50px;
-        line-height:50px;
+        line-height:42px;
         text-align:center;
         float:left;
     }
     .pro_info .title_right>ul li a{
         color:#ffffff;
         font-size:14px;
+        padding-bottom:6px;
+        text-decoration:none;
     }
-    .pro_info .title_right>ul li a:hover,.pro_info .title_right>ul li a.cur{
+    .pro_info .title_right>ul li a.cur{
         font-weight:bold;
-        text-decoration:underline;
+        padding-bottom:3px;
+        border-bottom:3px solid #fff;
+        text-decoration:none;
     }
     .pro_info .title_right>a{
         display:block;
@@ -101,19 +106,92 @@
         font-size:14px;
     }
     .pro_info .pro_list{
-        overflow:hidden;
+        float:left;
+        padding-bottom:20px;
+        width:100%;
     }
-    .pro_info .pro_list a{
+    .pro_info .pro_list .diva{
+        display:block;
+        overflow:hidden;
+        width:100%;
+        margin-top:30px;
+        position:relative;
+        text-decoration:none;
+        box-shadow:#eeeeee 0px 4px 10px 1px;
+        cursor:pointer;
+    }
+        .pro_info .pro_list .diva img {
+            width:100%;
+        }
+        .pro_info .pro_list .diva p{
+            margin:0;
+            text-align:center;
+            height:35px;
+            line-height:35px;
+            font-size:14px;
+            color:#333333;
+        }
+        .pro_info .pro_list .diva .imgbg{
+            position:relative;
+        }
+        .pro_info .pro_list .diva .imgbg:after{
+            content:" ";
+            position:absolute;
+            width:100%;
+            height:100%;
+            z-index:10;
+            top:0;
+            left:0;
+            background-color:#000;
+            opacity:.3;
+            display:none;
+        }
+        
+        .pro_info .pro_list .diva .imgbg a{
+            position:absolute;
+            border:0;
+            width:110px;
+            height:35px;
+            line-height:35px;
+            color:#fff;
+            font-size:14px;
+            top:20px;
+            z-index:15;
+            left:43px;
+            display:none;
+            text-align:center;
+            text-decoration:none;
+        }
+        .pro_info .pro_list .diva .imgbg a.zx{
+            background: -webkit-linear-gradient(left, #028a96, #40af6d);
+            background: -o-linear-gradient(right, #028a96, #40af6d);
+            background: -moz-linear-gradient(right, #028a96, #40af6d);
+            background: linear-gradient(to right, #028a96, #40af6d);
+        }
+        .pro_info .pro_list .diva .imgbg a.lj{
+            top:60px;
+            background-color:transparent;
+            border:2px solid #fff;
+        }
+        .pro_info .pro_list .diva:hover .imgbg a{
+            display:block;
+        }
+        .pro_info .pro_list .diva:hover .imgbg:after {
+            display:block;
+        }
+
+
+        .pro_info .pro_list .aa{
         display:block;
         overflow:hidden;
         width:100%;
         margin-top:30px;
         position:relative;
     }
-        .pro_info .pro_list a img {
+        .pro_info .pro_list .aa img {
             width:100%;
         }
-        .pro_info .pro_list a p{
+        .pro_info .pro_list .aa p{
             display:none;
             position:absolute;
             width:100%;
@@ -129,10 +207,10 @@
             font-size:14px;
             font-weight:bold;
         }
-        .pro_info .pro_list a:hover p{
+        .pro_info .pro_list .aa:hover p{
             display:block;
         }
-        .pro_info .pro_list a:hover p:after{
+        .pro_info .pro_list .aa:hover p:after{
             position:absolute;
             content:' ';
             display:block;
@@ -145,6 +223,7 @@
             opacity:.5;
 
         }
+
 
 
         .pro_temp_elite .pro_temp_elite_title{

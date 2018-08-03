@@ -10,7 +10,7 @@ namespace AMW.DAL
 	{
    		public int QueryInt(string where, params object[] obj)
         {
-            return DBHelper.From("MldProduct").Take("count(*)").Where(where, obj).QueryInt();
+            return DBHelper.From("MldProduct a").Take("count(*)").Where(where, obj).QueryInt();
         }
 		public string QueryString(string where, params object[] obj)
         {

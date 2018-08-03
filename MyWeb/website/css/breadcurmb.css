@@ -1,14 +1,14 @@
-﻿.breadcrumb{
+﻿.breadcrumbdiv{
     color:#1a1a1a;
     background-color:#fff;
-    padding-top:20px;
+    padding-top:15px;
     padding-bottom:15px;
 }
-.breadcrumb a{
+.breadcrumbdiv a{
     color:#959595;
     font-size:16px;
     text-decoration:none;
 }
-.breadcrumb a.cur{
+.breadcrumbdiv a.cur{
     color:#018997;
 }

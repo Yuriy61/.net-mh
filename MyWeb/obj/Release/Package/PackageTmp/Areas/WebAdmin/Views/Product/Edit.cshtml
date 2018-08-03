@@ -177,7 +177,7 @@
                             <div class="col-md-6">
                                 <select class="form-control" name="allshowflag">
                                     <option value="1" @(Model.AllShowFlag.Equals(1) ? "selected" : "")>是</option>
-                                    <option value="0" @(Model.AllShowFlag.Equals(1) ? "selected" : "")>否</option>
+                                    <option value="0" @(Model.AllShowFlag.Equals(0) ? "selected" : "")>否</option>
                                 </select>
                             </div>
                         </div>
@@ -187,7 +187,7 @@
                             </label>
                             <div class="col-md-6">
                                 <select class="form-control" name="homeshowflag">
-                                    <option value="0" @(Model.HomeShowFlag.Equals(1) ? "selected" : "")>否</option>
+                                    <option value="0" @(Model.HomeShowFlag.Equals(0) ? "selected" : "")>否</option>
                                     <option value="1" @(Model.HomeShowFlag.Equals(1) ? "selected" : "")>是</option>
                                 </select>
                             </div>
@@ -199,7 +199,7 @@
                             <div class="col-md-6">
                                 <select class="form-control" name="iselite">
                                     <option value="1" @(Model.IsElite.Equals(1) ? "selected" : "")>是</option>
-                                    <option value="0" @(Model.IsElite.Equals(1) ? "selected" : "")>否</option>
+                                    <option value="0" @(Model.IsElite.Equals(0) ? "selected" : "")>否</option>
                                 </select>
                             </div>
                         </div>

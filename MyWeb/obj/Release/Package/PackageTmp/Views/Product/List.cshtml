@@ -21,18 +21,27 @@
             </div>
             <div class="col-md-7">
                 <div class="title_right">
-                    <ul>
-                        <li ><a href="#" class="cur">产品列表</a></li>
+                    <ul style="width:100%;">
+                        <li style="text-align:left; padding-left:30px;"><a href="javascript:void(0)" class="cur">产品列表</a></li>
                     </ul>
                 </div>
-                <div class="pro_list">
+                <div class="pro_list" id="proHtml">
                     <div class="row">
                         @{
                             int i1 = 0;
                             foreach (var item in Model)
                             {
                                 i1++;
-                                <div class="col-md-4"><a href="/Product/Index/@item.ID"><img src="@item.Img" /><p>@item.Name</p></a></div>
+                                <div class="col-md-4">
+                                    <div class="diva">
+                                        <div class="imgbg">
+                                            <img src="@item.Img" />
+                                            <a href="javascript:void(0)" onclick="window.open('http://wpa.qq.com/msgrd?V=1&uin=2880260703'); return false;" class="zx">立即咨询</a>
+                                            <a href="@("/Product/Index/" + item.ID)" class="lj">了解详情</a>
+                                        </div>
+                                        <p>@item.Name</p>
+                                    </div>
+                                </div>
                                 if (i1 % 3 == 0)
                                 {
                                     @Html.Raw("</div><div class=\"row\">");
@@ -43,11 +52,20 @@
                     </div>
                 </div>
                 <div class="pro_pager">
-                    <a href="#" class="disabled">首页</a>
-                    <a href="#">上一页</a>
-                    <a href="#">1</a>
-                    <a href="#">下一页</a>
-                    <a href="#">末页</a>
+                    @{
+                        int pageCount = (int)ViewBag.PageCount;
+                        int curPage = (int)ViewBag.CurPage;
+                    }
+                    <a href="javascript:void(0)" data-page="1" onclick="opt.setCurPage(1)" class="btna @(curPage == 1 ? "disabled" : "")">首页</a>
+                    <a href="javascript:void(0)" id="btnPrev" data-page="@(curPage==1?1:curPage-1)" class="btna @(curPage == 1 ? "disabled" : "")">上一页</a>
+                    @{
+                        for (int i = 1; i <= pageCount; i++)
+                        {
+                            <a href="javascript:void(0)" data-page="@i" class="@(i==curPage?"cur":"")">@i</a>
+                        }
+                    }
+                    <a href="javascript:void(0)" id="btnNext" data-page="@(curPage==pageCount?pageCount:curPage+1)" class="btna @(curPage == pageCount ? "disabled" : "")">下一页</a>
+                    <a href="javascript:void(0)" data-page="@pageCount" class="btna @(curPage == pageCount ? "disabled" : "")">末页</a>
                 </div>
                 <div class="star_product">
                     <div class="star_product_title" style="margin-bottom:10px;"><b>明星产品</b> / STAR PRODUCT</div>
@@ -81,3 +99,64 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    var opt = (function () {
+        var curPage = @ViewBag.CurPage, pageCount = @ViewBag.PageCount, cid = @ViewBag.Cid, id = @ViewBag.Id;
+        var keyword = "@ViewBag.Keyword";
+        function setCid(curCid){
+            $(".pro_info .title_list > ul a").removeClass("cur");
+            $(".pro_info .title_list > ul a[data-id='"+curCid+"']").addClass("cur");
+            cid = curCid;
+            getDate();
+        }
+        function setCurPage(cp){
+            curPage = cp;
+            $("#btnNext").attr("data-page",curPage==pageCount?pageCount:parseInt(curPage)+1);
+            $("#btnPrev").attr("data-page",curPage==1?1:parseInt(curPage)-1);
+            $(".pro_pager a").removeClass("disabled");
+            $(".pro_pager a").removeClass("cur");
+            $(".pro_pager a[data-page='"+cp+"']").addClass("cur");
+            $(".pro_pager .btna[data-page='"+cp+"']").removeClass("cur");
+            $(".pro_pager .btna[data-page='"+cp+"']").addClass("disabled");
+            getDate();
+        }
+        function getDate() {
+            $("#proHtml").html("");
+            $.post("/Product/GetList",{curPage:curPage,cid:cid,id:id,keyword:keyword }).done(function(d){
+                if(!!d && !!d.ok && !!d.data.proList && d.data.proList.length>0){
+                    var idx = 0;
+                    var html = "<div class=\"row\">";
+                    d.data.proList.forEach(function (pro) {
+                        idx++;
+                        html += "<div class=\"col-md-4\"><div class=\"diva\">"+
+                                        "<div class=\"imgbg\">"+
+                                            "<img src=\""+pro.Img+"\">"+
+                                            "<a href=\"javascript:void(0)\" onclick=\"window.open('http://wpa.qq.com/msgrd?V=1&amp;uin=2880260703'); return false;\" class=\"zx\">立即咨询</a>"+
+                                            "<a href=\"/Product/Index/"+pro.ID+"\" class=\"lj\">了解详情</a>"+
+                                        "</div><p>"+pro.Name+"</p></div></div>";
+                        if(idx%3==0){
+                            html += "</div><div class=\"row\">";
+                        }
+                    });
+                    html += "</div>";
+                    $("#proHtml").html(html);
+                }
+            });
+        }
+        return {
+            setCid:setCid,
+            setCurPage:setCurPage
+        }
+    })();
+    $(function(){
+        $(".pro_info .title_list > ul a").attr("href","javascript:void(0)");
+        $(".pro_info .title_list > ul a").click(function(){
+            opt.setCid($(this).attr("data-id"));
+        });
+
+        $(".pro_pager a").click(function(){
+            opt.setCurPage($(this).attr("data-page"));
+        });
+    })
+</script>

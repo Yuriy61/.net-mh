@@ -1,6 +1,6 @@
 ﻿@model int
 <link href="~/website/css/breadcurmb.css" rel="stylesheet" type="text/css" media="all" />
-<div class="breadcrumb">
+<div class="breadcrumbdiv">
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -32,6 +32,15 @@
 
                             @Html.Raw("> <a href='/Product/List?id=" + c2.ID + "'>" + c2.Name + "</a> > <a href='/Product/List?cid=" + c1.ID + "'>" + c1.Name + "</a>> <a href='/Product/Index/" + pro.ID + "' class='cur'>" + pro.Name + "</a>")
 
+                    }
+                    else if (url.IndexOf("/applicationarea/index/") > -1)
+                    {
+                        
+                        @Html.Raw("> <a href='/ApplicationArea/List'>应用领域</a> > <a>" + new AMW.DAL.MldApplicationAreaDal().Query(Model).Name + "</a>")
+                    }
+                    else if (url.IndexOf("/applicationarea/list/") > -1)
+                    {
+                        @Html.Raw("> <a>应用领域</a>")
                     }
 }
             </div>

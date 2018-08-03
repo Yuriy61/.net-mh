@@ -905,6 +905,7 @@
     <Compile Include="Areas\WebAdmin\Controllers\CommentController.cs" />
     <Compile Include="Areas\WebAdmin\Controllers\FormController.cs" />
     <Compile Include="Areas\WebAdmin\Controllers\NewsController.cs" />
+    <Compile Include="Areas\WebAdmin\Controllers\ApplicationAreaController.cs" />
     <Compile Include="Areas\WebAdmin\Controllers\ProductImgController.cs" />
     <Compile Include="Areas\WebAdmin\Controllers\ProductController.cs" />
     <Compile Include="Areas\WebAdmin\Controllers\ProductCategoryController.cs" />
@@ -913,6 +914,7 @@
     <Compile Include="Areas\WebAdmin\Controllers\WebsiteContentController.cs" />
     <Compile Include="Attribute\CustomUserAuthorizeAttribute.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\ApplicationAreaController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
@@ -1009,6 +1011,9 @@
     <Content Include="Areas\WebAdmin\Views\Form\List.cshtml" />
     <Content Include="Areas\WebAdmin\Views\WebsiteContent\Index.cshtml" />
     <Content Include="Areas\WebAdmin\Views\Comment\List.cshtml" />
+    <Content Include="Areas\WebAdmin\Views\ApplicationArea\Edit.cshtml" />
+    <Content Include="Areas\WebAdmin\Views\ApplicationArea\List.cshtml" />
+    <Content Include="Areas\WebAdmin\Views\ApplicationArea\Index.cshtml" />
     <None Include="Properties\PublishProfiles\file.pubxml" />
     <None Include="Properties\PublishProfiles\正式版.pubxml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
@@ -1022,6 +1027,9 @@
     <Content Include="Views\Home\Comment.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\News\List.cshtml" />
+    <Content Include="Views\Product\ApplicationArea.cshtml" />
+    <Content Include="Views\ApplicationArea\Index.cshtml" />
+    <Content Include="Views\ApplicationArea\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

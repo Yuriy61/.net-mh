@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="MldAdmin.cs" />
     <Compile Include="MldAdv.cs" />
+    <Compile Include="MldApplicationArea.cs" />
     <Compile Include="MldComment.cs" />
     <Compile Include="MldForm.cs" />
     <Compile Include="MldNews.cs" />

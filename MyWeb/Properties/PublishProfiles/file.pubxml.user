@@ -27,6 +27,15 @@
     <File Include="Areas/WebAdmin/Views/Adv/List.cshtml">
       <publishTime>07/11/2018 21:41:53</publishTime>
     </File>
+    <File Include="Areas/WebAdmin/Views/ApplicationArea/Edit.cshtml">
+      <publishTime>08/02/2018 22:48:37</publishTime>
+    </File>
+    <File Include="Areas/WebAdmin/Views/ApplicationArea/Index.cshtml">
+      <publishTime>08/02/2018 22:49:26</publishTime>
+    </File>
+    <File Include="Areas/WebAdmin/Views/ApplicationArea/List.cshtml">
+      <publishTime>08/02/2018 22:50:29</publishTime>
+    </File>
     <File Include="Areas/WebAdmin/Views/City/Edit.cshtml">
       <publishTime>04/22/2018 00:35:15</publishTime>
     </File>
@@ -112,7 +121,7 @@
       <publishTime>08/26/2017 10:58:24</publishTime>
     </File>
     <File Include="Areas/WebAdmin/Views/Product/Edit.cshtml">
-      <publishTime>08/01/2018 18:38:03</publishTime>
+      <publishTime>08/01/2018 20:31:28</publishTime>
     </File>
     <File Include="Areas/WebAdmin/Views/Product/Index.cshtml">
       <publishTime>08/01/2018 18:38:08</publishTime>
@@ -169,7 +178,7 @@
       <publishTime>07/11/2018 07:49:34</publishTime>
     </File>
     <File Include="Areas/WebAdmin/Views/Shared/_PartialMenu.cshtml">
-      <publishTime>08/01/2018 13:37:47</publishTime>
+      <publishTime>08/02/2018 22:40:01</publishTime>
     </File>
     <File Include="Areas/WebAdmin/Views/Shared/_PartialNotifition.cshtml">
       <publishTime>06/17/2018 11:07:11</publishTime>
@@ -208,7 +217,7 @@
       <publishTime>06/23/2017 01:02:24</publishTime>
     </File>
     <File Include="bin/Common.dll">
-      <publishTime>08/01/2018 15:00:26</publishTime>
+      <publishTime>08/03/2018 08:27:41</publishTime>
     </File>
     <File Include="bin/Common.Logging.Core.dll">
       <publishTime>05/10/2018 00:29:15</publishTime>
@@ -217,7 +226,7 @@
       <publishTime>05/10/2018 00:29:15</publishTime>
     </File>
     <File Include="bin/DAL.dll">
-      <publishTime>08/01/2018 20:14:35</publishTime>
+      <publishTime>08/03/2018 08:27:41</publishTime>
     </File>
     <File Include="bin/DB.dll">
       <publishTime>08/01/2018 15:00:26</publishTime>
@@ -250,10 +259,10 @@
       <publishTime>06/23/2017 01:02:25</publishTime>
     </File>
     <File Include="bin/Model.dll">
-      <publishTime>08/01/2018 20:14:35</publishTime>
+      <publishTime>08/03/2018 08:27:40</publishTime>
     </File>
     <File Include="bin/MyWeb.dll">
-      <publishTime>08/01/2018 20:14:36</publishTime>
+      <publishTime>08/03/2018 08:27:42</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>06/23/2017 01:02:26</publishTime>
@@ -2175,6 +2184,12 @@
     <File Include="Views/Account/UploadFileList.cshtml">
       <publishTime>07/15/2018 19:57:49</publishTime>
     </File>
+    <File Include="Views/ApplicationArea/Index.cshtml">
+      <publishTime>08/02/2018 23:09:23</publishTime>
+    </File>
+    <File Include="Views/ApplicationArea/List.cshtml">
+      <publishTime>08/03/2018 00:03:21</publishTime>
+    </File>
     <File Include="Views/Home/AboutUs.cshtml">
       <publishTime>08/01/2018 14:56:47</publishTime>
     </File>
@@ -2209,7 +2224,7 @@
       <publishTime>05/08/2018 01:20:51</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>08/01/2018 15:29:13</publishTime>
+      <publishTime>08/03/2018 00:08:51</publishTime>
     </File>
     <File Include="Views/Home/OnlineFilling.cshtml">
       <publishTime>07/11/2018 23:03:02</publishTime>
@@ -2229,11 +2244,14 @@
     <File Include="Views/News/List.cshtml">
       <publishTime>08/01/2018 14:33:53</publishTime>
     </File>
+    <File Include="Views/Product/ApplicationArea.cshtml">
+      <publishTime>08/02/2018 22:58:34</publishTime>
+    </File>
     <File Include="Views/Product/Index.cshtml">
       <publishTime>08/01/2018 20:12:39</publishTime>
     </File>
     <File Include="Views/Product/List.cshtml">
-      <publishTime>08/01/2018 11:24:36</publishTime>
+      <publishTime>08/03/2018 02:11:36</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutHourseMain.cshtml">
       <publishTime>05/08/2018 07:20:30</publishTime>
@@ -2248,7 +2266,7 @@
       <publishTime>07/30/2018 05:16:31</publishTime>
     </File>
     <File Include="Views/Shared/_PartialBreadcurmb.cshtml">
-      <publishTime>08/01/2018 11:23:20</publishTime>
+      <publishTime>08/03/2018 00:00:14</publishTime>
     </File>
     <File Include="Views/Shared/_PartialMenu.cshtml">
       <publishTime>07/15/2018 23:09:18</publishTime>
@@ -2260,7 +2278,7 @@
       <publishTime>04/18/2018 01:03:12</publishTime>
     </File>
     <File Include="Views/Shared/_PartialProLeft.cshtml">
-      <publishTime>08/01/2018 06:43:34</publishTime>
+      <publishTime>08/03/2018 01:58:29</publishTime>
     </File>
     <File Include="Views/web.config">
       <publishTime>08/06/2017 15:54:28</publishTime>
@@ -2350,7 +2368,7 @@
       <publishTime>07/11/2018 20:19:49</publishTime>
     </File>
     <File Include="website/css/breadcurmb.css">
-      <publishTime>07/29/2018 09:36:25</publishTime>
+      <publishTime>08/03/2018 00:00:36</publishTime>
     </File>
     <File Include="website/css/contact.css">
       <publishTime>07/11/2018 23:03:44</publishTime>
@@ -2368,7 +2386,7 @@
       <publishTime>07/11/2018 20:19:49</publishTime>
     </File>
     <File Include="website/css/proinfo.css">
-      <publishTime>07/30/2018 06:26:14</publishTime>
+      <publishTime>08/03/2018 00:10:44</publishTime>
     </File>
     <File Include="website/css/search.css">
       <publishTime>07/29/2018 08:13:06</publishTime>
