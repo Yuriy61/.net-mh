@@ -714,6 +714,7 @@
     <Content Include="Content\webadmin\Logo.png" />
     <Content Include="ErrorPage\Img\timg.png" />
     <Content Include="Global.asax" />
+    <Content Include="upload\area_icon.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1047,7 +1048,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="upload\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\组件\Common\Common.csproj">

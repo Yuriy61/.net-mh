@@ -17,38 +17,6 @@
                     <img src="~/website/img/pro_info.png" />
                 </div>
                 <script type="text/javascript">
-                    $(function () {
-                        $(".pro_info .title_list > a").click(function () {
-                            $(".pro_info .title_list > a").removeClass("cur");
-                            $(this).addClass("cur");
-                            
-                            $.post("/Home/GetHomeProduct", { cid: $(this).attr("data-id") }).done(function (d) {
-                                $(".pro_info .title_right>ul").html("");
-                                $("#pc").html("");
-                                $("#proMore").attr("href", "/Product/List?id=" + $(this).attr("data-id"));
-                                if(!!d && !!d.ok && !!d.data){
-                                    if (!!d.data.categoryList && d.data.categoryList.length > 0) {
-                                        d.data.categoryList.forEach(function (category) {
-                                            $(".pro_info .title_right>ul").append($("<li><a href=\"javascript:void(0)\" onclick=\"clickCategory(" + category.ID + ",this)\">" + category.Name + "</a></li>"));
-                                        })
-                                    }
-                                    if (!!d.data.proList && !!d.data.proList.length > 0) {
-                                        var idx = 0;
-                                        var html = "<div class=\"row\">";
-                                        d.data.proList.forEach(function (pro) {
-                                            idx++;
-                                            html += "<div class=\"col-md-4\"><a class='aa' href=\"/Product/Index/"+pro.ID+"\"><img src=\""+pro.Img+"\" /><p>"+pro.Name+"</p></a></div>";
-                                            if(idx%3==0){
-                                                html += "</div><div class=\"row\">";
-                                            }
-                                        });
-                                        html += "</div>";
-                                        $("#pc").html(html);
-                                    }
-                                }
-                            });
-                        });
-                    });
                     function clickCategory(id,obj) {
                         $(".pro_info .title_right>ul li a").removeClass("cur");
                         $(obj).addClass("cur");
@@ -74,13 +42,13 @@
                     }
                 </script>
                 <div class="title_list">
-                    <a href="javascript:void(0)" data-id="1">工作台</a>
-                    <a href="javascript:void(0)" data-id="2">工业铝型材</a>
-                    <a href="javascript:void(0)" data-id="3">围栏及防护罩</a>
-                    <a href="javascript:void(0)" data-id="4">工业梯/踏台/工业平台</a>
-                    <a href="javascript:void(0)" data-id="5">铝型材配件</a>
-                    <a href="javascript:void(0)" data-id="6">开模定制 </a>
-                    <a href="javascript:void(0)" data-id="7">铝型材框架应用</a>
+                    <a href="/Product/List?id=1">工作台</a>
+                    <a href="/Product/List?id=2">工业铝型材</a>
+                    <a href="/Product/List?id=3">围栏及防护罩</a>
+                    <a href="/Product/List?id=4">工业梯/踏台/工业平台</a>
+                    <a href="/Product/List?id=5">铝型材配件</a>
+                    <a href="/Product/List?id=6">开模定制 </a>
+                    <a href="/Product/List?id=7">铝型材框架应用</a>
                 </div>
             </div>
             <div class="col-md-7">
