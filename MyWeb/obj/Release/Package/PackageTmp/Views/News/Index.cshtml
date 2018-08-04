@@ -1,0 +1,70 @@
+﻿@model AMW.Model.Entity.MldNews
+@{
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    
+    List<AMW.Model.Entity.MldProductImg> imgList = ViewBag.ImgList as List<AMW.Model.Entity.MldProductImg>;
+}
+
+<link href="/website/banner/css/banner.css" type="text/css" rel="stylesheet" media="all" />
+<link href="/website/banner/css/animate.min.css" type="text/css" rel="stylesheet" media="all" />
+<script type="text/javascript" src="/website/banner/js/banner.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#banner").THBanner();
+    });
+</script>
+<style type="text/css">
+    .news_list a {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        background-color: #fff;
+        height: 190px;
+        padding: 20px;
+        padding-right: 60px;
+        text-decoration: none;
+        margin-bottom: 20px;
+    }
+
+        .news_list a img {
+            width: 225px;
+            height: 150px;
+            float: left;
+            margin-right: 10px;
+        }
+</style>
+<div id="banner" class="banner" style="overflow:hidden;">
+    <div class="banner-item animated" data-classin="fadeIn" data-classout="fadeOut delay10" data-time="400">
+        <div class="banner-img" style="background-image:url(/website/img/news_banner.jpg)"></div>
+        <div class="banner-text vbox box-h-center box-v-center">
+        </div>
+    </div>
+    <div class="banner-item animated" data-classin="fadeIn" data-classout="fadeOut delay10" data-time="400">
+        <div class="banner-img" style="background-image:url(/website/img/banner.jpg)"></div>
+        <div class="banner-text vbox box-h-center box-v-center">
+        </div>
+    </div>
+    <div class="banner-tool">
+    </div>
+</div>
+
+<div class="container">
+    <div class="row" style="margin-top:20px;">
+        <div class="col-md-12">
+            <div style="border:1px solid #d7d7d7;padding:36px 55px;">
+                <div style="color:#333;font-size:22px;font-weight:bold;">[@(Model.NewsType == 1 ? "公司新闻" : "行业新闻")]&nbsp;@Model.Title</div>
+                <p style="color:#999999; font-size:12px; border-bottom:1px solid #d7d7d7;">@Model.AddTime.ToString("yyyy-MM-dd HH:mm:ss")</p>
+                <div style="padding:20px;border-bottom:1px solid #d7d7d7;">
+                    @Html.Raw(Model.Content)
+                </div>
+                @{
+                    AMW.DAL.MldNewsDal newsDal = new AMW.DAL.MldNewsDal();
+                    AMW.Model.Entity.MldNews prev = newsDal.getPrev(Model.ID);
+                    AMW.Model.Entity.MldNews next = newsDal.getNext(Model.ID);
+                }
+                <p>上一篇 @(prev == null ? Html.Raw("<a href='javascript:void(0)'>上一篇没有了</a>") : Html.Raw("<a href='/News/Index/"+prev.ID+"'>"+prev.Title+"</a>")) </p>
+                <p>下一篇 @(next == null ? Html.Raw("<a href='javascript:void(0)'>上一篇没有了</a>") : Html.Raw("<a href='/News/Index/" + next.ID + "'>" + next.Title + "</a>")) </p>
+            </div>
+        </div>
+    </div>
+</div>

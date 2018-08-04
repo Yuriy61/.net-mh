@@ -1,0 +1,24 @@
+F:\NET工作区\展示-美安基金\代码\代码\Model\bin\Release\Model.dll
+F:\NET工作区\展示-美安基金\代码\代码\Model\bin\Release\Model.pdb
+F:\NET工作区\展示-美安基金\代码\代码\Model\bin\Release\Common.dll
+F:\NET工作区\展示-美安基金\代码\代码\Model\bin\Release\DB.dll
+F:\NET工作区\展示-美安基金\代码\代码\Model\bin\Release\Common.pdb
+F:\NET工作区\展示-美安基金\代码\代码\Model\bin\Release\DB.pdb
+F:\NET工作区\展示-美安基金\代码\代码\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+F:\NET工作区\展示-美安基金\代码\代码\Model\obj\Release\Model.dll
+F:\NET工作区\展示-美安基金\代码\代码\Model\obj\Release\Model.pdb
+F:\NET工作区\房地产\代码\Model\bin\Release\Model.dll
+F:\NET工作区\房地产\代码\Model\bin\Release\Model.pdb
+F:\NET工作区\房地产\代码\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+F:\NET工作区\房地产\代码\Model\obj\Release\Model.dll
+F:\NET工作区\房地产\代码\Model\obj\Release\Model.pdb
+F:\NET工作区\at your services\代码\Model\bin\Release\Model.dll
+F:\NET工作区\at your services\代码\Model\bin\Release\Model.pdb
+F:\NET工作区\at your services\代码\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+F:\NET工作区\at your services\代码\Model\obj\Release\Model.dll
+F:\NET工作区\at your services\代码\Model\obj\Release\Model.pdb
+F:\NET工作区\上海皇闽铝业\代码\Model\bin\Release\Model.dll
+F:\NET工作区\上海皇闽铝业\代码\Model\bin\Release\Model.pdb
+F:\NET工作区\上海皇闽铝业\代码\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+F:\NET工作区\上海皇闽铝业\代码\Model\obj\Release\Model.dll
+F:\NET工作区\上海皇闽铝业\代码\Model\obj\Release\Model.pdb

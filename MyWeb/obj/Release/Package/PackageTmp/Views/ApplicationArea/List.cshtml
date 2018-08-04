@@ -1,0 +1,68 @@
+﻿@model List<AMW.Model.Entity.MldApplicationArea>
+@{
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+@Html.Partial("_PartialBanner")
+
+@Html.Partial("_PartialBreadcurmb",0)
+
+<link href="~/website/css/proinfo.css" rel="stylesheet" type="text/css" media="all" />
+<div class="pro_info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+               @Html.Partial("_PartialProLeft")
+            </div>
+            <div class="col-md-7">
+                <div class="title_right">
+                    <ul style="width:100%;">
+                        <li style="text-align:left; padding-left:30px;"><a href="javascript:void(0)" class="cur">应用领域列表</a></li>
+                    </ul>
+                </div>
+                <div class="pro_list">
+                    <div class="row">
+                        @{
+                            int i1 = 0;
+                            foreach (var item in Model)
+                            {
+                                i1++;
+                                <div class="col-md-4">
+                                    <div class="diva">
+                                        <div class="imgbg">
+                                            <img src="@item.Icon" />
+                                            <a href="javascript:void(0)" onclick="window.open('http://wpa.qq.com/msgrd?V=1&uin=2880260703'); return false;" class="zx">立即咨询</a>
+                                            <a href="@("/ApplicationArea/Index/" + item.ID)" class="lj">了解详情</a>
+                                        </div>
+                                        <p>@item.Name</p>
+                                    </div>
+                                </div>
+                                if (i1 % 3 == 0)
+                                {
+                                    @Html.Raw("</div><div class=\"row\">");
+
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="pro_pager">
+                    @{
+                        int pageCount = (int)ViewBag.PageCount;
+                        int curPage = (int)ViewBag.CurPage;
+                    }
+                    <a href="/ApplicationArea/List?curPage=1" class="@(curPage == 1 ? "disabled" : "")">首页</a>
+                    <a href="/ApplicationArea/List?curPage=@(curPage==1?1:curPage-1)" class="@(curPage == 1 ? "disabled" : "")">上一页</a>
+                    @{
+                        for (int i = 1; i <= pageCount; i++)
+                        {
+                            <a href="/ApplicationArea/List?curPage=@i" class="@(i==curPage?"cur":"")">@i</a>
+                        }
+                    }
+                    <a href="/ApplicationArea/List?curPage=@(curPage==pageCount?pageCount:curPage+1)" class="@(curPage == pageCount ? "disabled" : "")">下一页</a>
+                    <a href="/ApplicationArea/List?curPage=@pageCount" class="@(curPage == pageCount ? "disabled" : "")">末页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

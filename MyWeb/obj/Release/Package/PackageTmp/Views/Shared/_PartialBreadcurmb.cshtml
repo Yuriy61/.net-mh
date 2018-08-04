@@ -1,0 +1,49 @@
+﻿@model int
+<link href="~/website/css/breadcurmb.css" rel="stylesheet" type="text/css" media="all" />
+<div class="breadcrumbdiv">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <a href="/">首页</a> 
+                @{
+                    string url = Request.Url.AbsoluteUri.ToLower();
+                    AMW.DAL.MldProductCategoryDal categoryDal = new AMW.DAL.MldProductCategoryDal();
+                    if (url.IndexOf("/product/list")>-1)
+                    {
+                        string cid = Request["cid"];
+                        string id = Request["id"];
+                        if(!string.IsNullOrEmpty(cid)){
+                            AMW.Model.Entity.MldProductCategory c1 = categoryDal.Query(int.Parse(cid));
+                            AMW.Model.Entity.MldProductCategory c2 = categoryDal.Query(c1.Tid);
+                            
+                            @Html.Raw("> <a href='/Product/List?id="+c2.ID+"'>"+c2.Name+"</a> > <a href='/Product/List?cid="+c1.ID+"' class='cur'>"+c1.Name+"</a>")
+                        }else if(!string.IsNullOrEmpty(id)){
+                            AMW.Model.Entity.MldProductCategory c1 = categoryDal.Query(int.Parse(id));
+                            @Html.Raw("> <a href='/Product/List?id=" + c1.ID + "'>" + c1.Name + "</a>")
+                        }
+                    }
+                    else if (url.IndexOf("/product/index") > -1)
+                    {
+                      
+                            AMW.DAL.MldProductDal proDal = new AMW.DAL.MldProductDal();
+                            AMW.Model.Entity.MldProduct pro = proDal.Query(Model);
+                            AMW.Model.Entity.MldProductCategory c1 = categoryDal.Query(pro.Cid);
+                            AMW.Model.Entity.MldProductCategory c2 = categoryDal.Query(c1.Tid);
+
+                            @Html.Raw("> <a href='/Product/List?id=" + c2.ID + "'>" + c2.Name + "</a> > <a href='/Product/List?cid=" + c1.ID + "'>" + c1.Name + "</a>> <a href='/Product/Index/" + pro.ID + "' class='cur'>" + pro.Name + "</a>")
+
+                    }
+                    else if (url.IndexOf("/applicationarea/index/") > -1)
+                    {
+                        
+                        @Html.Raw("> <a href='/ApplicationArea/List'>应用领域</a> > <a>" + new AMW.DAL.MldApplicationAreaDal().Query(Model).Name + "</a>")
+                    }
+                    else if (url.IndexOf("/applicationarea/list/") > -1)
+                    {
+                        @Html.Raw("> <a>应用领域</a>")
+                    }
+}
+            </div>
+        </div>
+    </div>
+</div>

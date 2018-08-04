@@ -1,0 +1,257 @@
+﻿@model AMW.Model.Entity.MldProduct
+@{
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+
+    List<AMW.Model.Entity.MldProductImg> imgList = ViewBag.ImgList as List<AMW.Model.Entity.MldProductImg>;
+}
+
+<script type="text/javascript" src="/website/js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.js"></script>
+<script type="text/javascript" src="/website/js/jquery.fancybox-1.3.4/fancybox/jquery.easing-1.3.pack.js"></script>
+<script type="text/javascript" src="/website/js/jquery.fancybox-1.3.4/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<link rel="stylesheet" href="/website/js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+@Html.Partial("_PartialBanner")
+
+@Html.Partial("_PartialBreadcurmb", Model.ID)
+
+<link href="~/website/css/proinfo.css" rel="stylesheet" type="text/css" media="all" />
+<div class="pro_info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+                @Html.Partial("_PartialProLeft")
+            </div>
+            <div class="col-md-7">
+                <div class="star_product">
+                    <div class="star_product_title" style="margin-bottom:10px;"><b>产品详情</b> / PRODUCT DETAIL</div>
+                    <div class="product_detail">
+                        <div class="product_detail1">
+                            <div class="product_img_div">
+                                <img src="@imgList[0].Img" />
+                            </div>
+                            <div class="product_info">
+                                <h1 style="font-size:18px; font-weight:bold;color:#262626; border-bottom:1px solid #ebebeb;padding-bottom:8px;">@Model.Name</h1>
+                                <p>产品分类： <b>@ViewBag.CategoryName</b></p>
+                                <p style="border-bottom:1px solid #ebebeb;padding-bottom:8px;">@Model.SubHead</p>
+                                <h2 style="font-size:16px;color:#1a1a1a;border-bottom:1px solid #ebebeb; margin-bottom:0;padding-bottom:20px;">订购热线：<label style="color:#018997;">021-57486118</label></h2>
+                                <p style="font-size:12px; color:#f40000;padding:10px 0;">* 可按需求定制加工、了解海量框架定制实例、 领取样段样册 请点击下方按钮* </p>
+                                <a style="display:block;width:90%; height:30px; line-height:30px; font-size:12px;color:#fff;background: -webkit-linear-gradient(left, #018997, #41af6d);
+    background: -o-linear-gradient(right, #018997, #41af6d);
+    background: -moz-linear-gradient(right, #018997, #41af6d);
+    background: linear-gradient(to right, #018997, #41af6d); text-decoration:none;text-align:center;margin:0 auto;" href="#">立即咨询</a>
+                            </div>
+                        </div>
+                        <div class="product_detail2">
+                            @{
+                                foreach (var item in imgList)
+                                {
+                                    <img src="@item.Img" />
+                                }
+                            }
+                        </div>
+                        <div class="product_detail3">
+                            <span data-id="pro_info" class="cur">商品介绍</span>
+                            <span data-id="pro_data">商品数据</span>
+                        </div>
+                        <div id="product_detail4" style="padding-bottom:50px; border-bottom:1px solid #dde0e0;margin-bottom:20px; overflow:hidden; padding:20px 0; background-color:#ffffff;">
+                            <div id="pro_info">
+                                @Html.Raw(Model.Content)
+                            </div>
+                            <style type="text/css">
+                                #pro_data table{
+                                    width:100%;
+                                    border:9px solid #fff;
+                                }
+                                #pro_data table tr td{
+                                    background-color:#f3f3f3;
+                                    height:40px;
+                                    border:9px solid #fff;
+                                    font-size:14px;
+                                    padding-left:8px;
+                                }
+                            </style>
+                            <div id="pro_data" class="hide">
+                                <table class="tb1">
+                                    <tr>
+                                        <td rowspan="5" style="width:50%;background-color:#fff;text-align:center;">
+                                            <a class="grouped_elements" rel="group1" href="@imgList[0].Img">
+                                                <img style="max-height:270px;" src="@imgList[0].Img" alt="" />
+                                            </a>
+                                        </td>
+                                        <td style="width:50%;color:#333333;"><div style="float:left;height:60%;margin-right:10px; width:4px; background-color:#518877;"></div> @(Model.Name)参数</td>
+                                    </tr>
+                                    <tr><td style="color:#322c27;"><label style="color:#666666;font-weight:normal;width:120px;">型材Profile</label>@Model.Profile</td></tr>
+                                    <tr><td style="color:#666666;">@Model.SubHead</td></tr>
+                                    <tr><td style="color:#322c27;">应用说明 Application</td></tr>
+                                    <tr><td style="color:#322c27;">@Model.Application</td></tr>
+                                </table>
+                                <div style="margin:20px 0;background-color:#dde0e0; height:1px;"></div>
+                                <h3 style="text-align:center; margin:40px 0; font-weight:bold; color:#333333;">技术数据</h3>
+                                <table style="text-align:center;">
+                                    <tr>
+                                        <td rowspan="5" style="background-color:#fff;width:50%;">
+                                            <a class="grouped_elements" rel="group1" href="@Model.ProfileImg">
+                                                <img style="max-height:270px; max-width:100%;" src="@Model.ProfileImg" alt="" />
+                                            </a>
+                                            <script type="text/javascript">
+                                                $(function () {
+                                                    $("a.grouped_elements").fancybox();
+                                                });
+                                            </script>
+                                        </td>
+                                        <td>
+                                            材料<br />
+                                            Material
+                                        </td>
+                                        <td>@Html.Raw(Model.Material)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            单位质量<br />
+                                            Weight
+                                        </td>
+                                        <td>@Model.Weight</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            长度<br />
+                                            Length
+                                        </td>
+                                        <td>@Model.Length</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            集合惯性<br />
+                                            Mass of lnertia
+                                        </td>
+                                        <td>@Model.MassOfInertia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            截面惯性<br />
+                                            Section Modulus
+                                        </td>
+                                        <td>@Model.SectionModulus</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <h1 style="font-size:24px;color:#262626;text-align:center;padding:30px 0;">联系方式</h1>
+                            <input type="text" id="txtName" class="form-control" maxlength="30" placeholder="请填写您的真实姓名*" style="margin-bottom:15px;" />
+                            <input type="tel" id="txtPhone" class="form-control" maxlength="30" placeholder="请填写您的手机号码*" style="margin-bottom:15px;" />
+                            <textarea id="txtContent" class="form-control" maxlength="500" placeholder="采购意向描述*" style="min-height:180px;margin-bottom:15px;"></textarea>
+                            <div style="overflow:hidden;padding:5px 0;">
+                                <img id="img1" src="/Image/ValidateCode" onclick="$(this).attr('src', '/Image/ValidateCode?r=' + new Date().getTime())" style="float:left; height:34px;margin-right:10px;" />
+                                <input type="number" id="txtCode" placeholder="请填写验证码*" class="form-control" style="width:160px;float:left;" />
+                            </div>
+
+                            <button class="bluebtn" id="btnSubmit" type="button" onclick="submitForm()">提交</button>
+                            <button class="bluebtn" type="button" onclick="resetForm()">重填</button>
+                        </div>
+                    </div>
+                    <style type="text/css">
+                        .star_product .star_product_title1:before {
+                            width: 88px;
+                        }
+                    </style>
+                    @{
+                        List<AMW.Model.Entity.MldProduct> eliteList = new AMW.DAL.MldProductDal().getElite(Model.Cid);
+                        if (null != eliteList && eliteList.Count > 0)
+                        {
+                            <div class="star_product_title star_product_title1" style="margin-bottom:10px;margin-top:45px;margin-bottom:10px;font-size:22px;font-weight:normal;">推荐产品</div>
+
+                            <div class="row elite_product">
+                                @foreach (var item in eliteList)
+                                {
+                                    <div class="col-md-4"><a href="/Product/Index/@item.ID"><img src="@item.Img" /><p>@item.Name</p></a></div>
+                                }
+                            </div>
+                        }
+
+                    }
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function submitForm() {
+        $("#btnSubmit").attr("disabled", "disabled");
+        var name = $("#txtName").val();
+        var phone = $("#txtPhone").val();
+        var content = $("#txtContent").val();
+        var code = $("#txtCode").val();
+        if (!name) {
+            alert("请填写您的姓名！");
+            return;
+        }
+        if (!phone) {
+            alert("请填写您的手机号码！");
+            return;
+        }
+        if (!content) {
+            alert("请填写您的采购意向！");
+            return;
+        }
+        if (!code) {
+            alert("请填写验证码！");
+            return;
+        }
+        $.post("/Home/SubmitForm", { name: name, phone: phone, content: content, code: code }).done(function (d) {
+            $("#btnSubmit").removeAttr("disabled");
+            if (d.ok) {
+                alert("提交成功！");
+                resetForm();
+            } else {
+                if (!!d.error) {
+                    alert(d.error);
+                } else {
+                    alert("提交失败！");
+                }
+
+
+            }
+        });
+    }
+    function resetForm() {
+        $("#txtName").val("");
+        $("#txtPhone").val("");
+        $("#txtContent").val("");
+        $("#txtCode").val("");
+        $("#img1").trigger("click");
+    }
+    $(function () {
+        $(".product_detail3 span").click(function () {
+            $("#product_detail4 > div").addClass("hide");
+            $(".product_detail3 span").removeClass("cur");
+            $("#" + $(this).attr("data-id")).removeClass("hide");
+            $(this).addClass("cur");
+        })
+        $(".product_detail2 img").click(function () {
+            $(".product_detail2 img").removeClass("cur");
+            $(this).addClass("cur");
+            $(".product_img_div img").attr("src", $(this).attr("src"))
+        });
+
+        $(".star_product .product_detail .product_detail1 .product_img_div:before").click(function () {
+            var obj = $(".star_product .product_detail .product_detail2 img.cur").prev();
+            if (!!obj) {
+                $(obj).trigger("click");
+            } else {
+                $(".star_product .product_detail .product_detail2 img").eq(0).trigger("click");
+            }
+        });
+        $(".star_product .product_detail .product_detail1 .product_img_div:after").click(function () {
+            var obj = $(".star_product .product_detail .product_detail2 img.cur").next();
+            if (!!obj) {
+                $(obj).trigger("click");
+            } else {
+                $(".star_product .product_detail .product_detail2 img").eq(0).trigger("click");
+            }
+        });
+    });
+</script>
