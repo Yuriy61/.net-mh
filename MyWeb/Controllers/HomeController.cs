@@ -32,29 +32,35 @@ namespace MyWeb.Controllers
 
             return View();
         }
-        public ActionResult GetHomeProduct(int cid)
+        public ActionResult GetHomeProduct2(int id,string cid)
         {
-            MldProductCategoryDal proCategory = new MldProductCategoryDal();
-            List<MldProductCategory> categoryList = proCategory.QueryList(1, 4, "id", "id asc", "tid=@1", cid);
+            List<MldProduct> proList = null;
+            if(id>0){
+                proList = DBHelper.From("MldProduct")
+                    .Take("*")
+                    .Where("cid in(select id from MldProductCategory where tid=@1) and allshowflag=1 and homeshowflag=1", id)
+                    .OrderBy("id asc")
+                    .GoToPage(1, 9, "id")
+                    .QueryList<MldProduct>();
+            }
+            else
+            {
+                try
+                {
+                    int[] cids = cid.Split(',').Select(r => int.Parse(r)).ToArray();
+                    proList = DBHelper.From("MldProduct")
+                    .Take("*")
+                    .Where("cid in(" + cid + ") and allshowflag=1 and homeshowflag=1")
+                    .OrderBy("id asc")
+                    .GoToPage(1, 9, "id")
+                    .QueryList<MldProduct>();
+                }catch{
 
-            List<MldProduct> proList = DBHelper.From("MldProduct")
-                   .Take("*")
-                   .Where("cid in(select id from MldProductCategory where tid=@1) and allshowflag=1 and homeshowflag=1", cid)
-                   .OrderBy("id asc")
-                   .GoToPage(1, 9, "id")
-                   .QueryList<MldProduct>();
-            return Json(new JsonResultModel() { ok = true, data = new { categoryList = categoryList, proList = proList } });
-
-        }
-        public ActionResult GetHomeProduct2(int cid)
-        {
-
-            List<MldProduct> proList = DBHelper.From("MldProduct")
-                   .Take("*")
-                   .Where("cid = @1 and allshowflag=1 and homeshowflag=1", cid)
-                   .OrderBy("id asc")
-                   .GoToPage(1, 9, "id")
-                   .QueryList<MldProduct>();
+                }
+                
+                
+            }
+            
             return Json(new JsonResultModel() { ok = true, data = new { proList = proList } });
 
         }

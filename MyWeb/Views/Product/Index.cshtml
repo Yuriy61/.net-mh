@@ -14,6 +14,103 @@
 @Html.Partial("_PartialBreadcurmb", Model.ID)
 
 <link href="~/website/css/proinfo.css" rel="stylesheet" type="text/css" media="all" />
+<style type="text/css">
+    #pro_data table {
+        width: 100%;
+        border: 9px solid #fff;
+    }
+
+        #pro_data table tr td {
+            background-color: #f3f3f3;
+            height: 40px;
+            border: 9px solid #fff;
+            font-size: 14px;
+            padding-left: 8px;
+        }
+
+    .areaitem {
+        width: 100%;
+        overflow: hidden;
+    }
+
+        .areaitem .item1 {
+            background: -webkit-linear-gradient(left, #0a8f91, #41af6d);
+            background: -o-linear-gradient(right, #0a8f91, #41af6d);
+            background: -moz-linear-gradient(right, #0a8f91, #41af6d);
+            background: linear-gradient(to right, #0a8f91, #41af6d);
+            padding-bottom: 25px;
+            height: 315px;
+            position: relative;
+            width: 100%;
+        }
+
+            .areaitem .item1 img {
+                display: block;
+                width: 44%;
+                margin: 0 auto;
+                padding: 36px 0;
+            }
+
+            .areaitem .item1 .p1 {
+                font-size: 20px;
+                color: #fff;
+                padding: 15px 0 10px 0;
+                text-align: center;
+            }
+
+            .areaitem .item1 .p2 {
+                font-size: 14px;
+                color: #fff;
+                padding: 0 10px;
+            }
+
+        .areaitem .item2 {
+            display: none;
+            height: 315px;
+            width: 100%;
+            position: relative;
+            z-index: 5;
+        }
+
+            .areaitem .item2 p {
+                position: relative;
+                z-index: 20;
+            }
+
+            .areaitem .item2 .p1 {
+                font-size: 20px;
+                color: #fff;
+                padding: 30px 0 10px 0;
+                text-align: center;
+            }
+
+            .areaitem .item2 .p2 {
+                font-size: 14px;
+                color: #fff;
+                padding: 0 10px;
+            }
+
+        .areaitem:hover .item1 {
+            display: none;
+        }
+
+        .areaitem:hover .item2 {
+            display: block;
+        }
+
+            .areaitem:hover .item2:after {
+                content: " ";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #333;
+                opacity: .3;
+            }
+</style>
+
 <div class="pro_info">
     <div class="container">
         <div class="row">
@@ -50,137 +147,120 @@
                         </div>
                         <div class="product_detail3">
                             <span data-id="pro_info" class="cur">商品介绍</span>
-                            <span data-id="pro_data">商品数据</span>
+                            <!--<span data-id="pro_data">商品数据</span>-->
                         </div>
-                        <div id="product_detail4" style="padding-bottom:50px; border-bottom:1px solid #dde0e0;margin-bottom:20px; overflow:hidden; padding:20px 0; background-color:#ffffff;">
+                        <div id="product_detail4" style="padding-bottom:50px;margin-bottom:20px; overflow:hidden; padding:20px 0; background-color:#ffffff;">
+                            @if (Model.ShowType == 1)
+                            {//表示非围栏等数据，是有产品数据的
+                                <div id="pro_data">
+                                    <p style="font-size:24px; color:#333333; font-weight:bold; text-align:center;">产品展示</p>
+                                    <p style="text-align:center;"><label style="color:#ffffff; font-size:22px;background-color:#518877;padding:7px 40px;margin:30px 0;">@Model.Name</label></p>
+
+                                    <table class="tb1">
+                                        <tr>
+                                            <td rowspan="5" style="width:50%;background-color:#fff;text-align:center;">
+                                                <a class="grouped_elements" rel="group1" href="@imgList[0].Img">
+                                                    <img style="max-height:270px;" src="@imgList[0].Img" alt="" />
+                                                </a>
+                                            </td>
+                                            <td style="width:50%;color:#333333;"><div style="float:left;height:60%;margin-right:10px; width:4px; background-color:#518877;"></div> @(Model.Name)参数</td>
+                                        </tr>
+                                        <tr><td style="color:#322c27;"><label style="color:#666666;font-weight:normal;width:120px;">型材Profile</label>@Model.Profile</td></tr>
+                                        <tr><td style="color:#666666;">@Model.SubHead</td></tr>
+                                        <tr><td style="color:#322c27;">应用说明 Application</td></tr>
+                                        <tr><td style="color:#322c27;">@Model.Application</td></tr>
+                                    </table>
+                                    <div style="margin:20px 0;background-color:#dde0e0; height:1px;"></div>
+                                    <h3 style="text-align:center; margin:40px 0; font-weight:bold; color:#333333;">技术数据</h3>
+                                    <table style="text-align:center;">
+                                        <tr>
+                                            <td rowspan="5" style="background-color:#fff;width:50%;">
+                                                <a class="grouped_elements" rel="group1" href="@Model.ProfileImg">
+                                                    <img style="max-height:270px; max-width:100%;" src="@Model.ProfileImg" alt="" />
+                                                </a>
+                                                <script type="text/javascript">
+                                                    $(function () {
+                                                        $("a.grouped_elements").fancybox();
+                                                    });
+                                                </script>
+                                            </td>
+                                            <td>
+                                                材料<br />
+                                                Material
+                                            </td>
+                                            <td>@Html.Raw(Model.Material)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                单位质量<br />
+                                                Weight
+                                            </td>
+                                            <td>@Model.Weight</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                长度<br />Length
+                                            </td>
+                                            <td>@Model.Length</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                集合惯性<br />
+                                                Mass of lnertia
+                                            </td>
+                                            <td>@Model.MassOfInertia</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                截面惯性<br />
+                                                Section Modulus
+                                            </td>
+                                            <td>@Model.SectionModulus</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            }
+                            
                             <div id="pro_info">
-                                <div style="padding-bottom:50px;border-bottom:1px solid #dde0e0;">
+                                <div style="padding-bottom:50px;margin-top:20px; border-bottom:1px solid #dde0e0;">
                                     @Html.Raw(Model.Content)
                                 </div>
-                                <div style="padding:55px 0;">
-                                    <h3 style="text-align:center;font-weight:bold;">应用领域</h3>
-                                    <div class="row">
+                                @if (Model.ShowType != 1)
+                                {
+                                    <div style="padding:55px 0;">
+                                        <h3 style="text-align:center;font-weight:bold; margin-bottom:50px;">应用领域</h3>
+                                        <div class="row">
+
+                                @{
+                                    List<AMW.Model.Entity.MldApplicationArea> applicationAreaList = new AMW.DAL.MldApplicationAreaDal().QueryList(1, 6, "id", "id desc", "homeshowFlag = @1", 1);
+                                    int idxApplicationArea = 0;
+                                    foreach (var item in applicationAreaList)
+                                    {
+                                        idxApplicationArea++;
                                         <div class="col-md-4">
-                                            <div class="areaitem">
-                                                <div class="item1">
-                                                    <img src="/upload/area_icon.png" />
-                                                    <p class="p1">制造业</p>
-                                                    <p class="p2">这里是描述这里是描述这里是描述这里是描述这里是描述这里是描述....</p>
+                                                <div class="areaitem">
+                                                    <div class="item1">
+                                                        <img src="@item.Icon" />
+                                                        <p class="p1">@item.Name</p>
+                                                        <p class="p2">@item.SubHead</p>
+                                                    </div>
+                                                    <div class="item2" style="background:url(@item.HomeBg) no-repeat;background-size:cover;">
+                                                        <p class="p1">@item.Name</p>
+                                                        <p class="p2">@item.SubHead</p>
+                                                    </div>
                                                 </div>
-                                                <div class="item2"></div>
                                             </div>
+                                        if (idxApplicationArea % 3 == 0)
+                                        {
+                                            @Html.Raw("</div><div class=\"row\">");
+                                        }
+                                    }
+                                }
                                         </div>
                                     </div>
-                                </div>
+                                }
                             </div>
-                            <style type="text/css">
-                                #pro_data table{
-                                    width:100%;
-                                    border:9px solid #fff;
-                                }
-                                #pro_data table tr td{
-                                    background-color:#f3f3f3;
-                                    height:40px;
-                                    border:9px solid #fff;
-                                    font-size:14px;
-                                    padding-left:8px;
-                                }
-                                .areaitem{
-                                    width:100%;
-                                }
-                                .areaitem .item1{
-                                    background: -webkit-linear-gradient(left, #0a8f91, #41af6d);
-                                    background: -o-linear-gradient(right, #0a8f91, #41af6d);
-                                    background: -moz-linear-gradient(right, #0a8f91, #41af6d);
-                                    background: linear-gradient(to right, #0a8f91, #41af6d);
-                                    padding-bottom:25px;
-                                }
-                                .areaitem .item1 img{
-                                    display:block;
-                                    width:44%;
-                                    margin:0 auto;
-                                    padding:36px 0;
-                                }
-                                .areaitem .item1 .p1{
-                                    font-size:20px;
-                                    color:#fff;
-                                    padding:15px 0 10px 0;
-                                    text-align:center;
-                                }
-                                    .areaitem .item1 .p2 {
-                                        font-size:14px;
-                                        color:#fff;
-                                        padding:0 10px;
-                                    }
-                                .areaitem .item2{
-                                    display:none;
-                                }
-                            </style>
-                            <div id="pro_data" class="hide">
-                                <table class="tb1">
-                                    <tr>
-                                        <td rowspan="5" style="width:50%;background-color:#fff;text-align:center;">
-                                            <a class="grouped_elements" rel="group1" href="@imgList[0].Img">
-                                                <img style="max-height:270px;" src="@imgList[0].Img" alt="" />
-                                            </a>
-                                        </td>
-                                        <td style="width:50%;color:#333333;"><div style="float:left;height:60%;margin-right:10px; width:4px; background-color:#518877;"></div> @(Model.Name)参数</td>
-                                    </tr>
-                                    <tr><td style="color:#322c27;"><label style="color:#666666;font-weight:normal;width:120px;">型材Profile</label>@Model.Profile</td></tr>
-                                    <tr><td style="color:#666666;">@Model.SubHead</td></tr>
-                                    <tr><td style="color:#322c27;">应用说明 Application</td></tr>
-                                    <tr><td style="color:#322c27;">@Model.Application</td></tr>
-                                </table>
-                                <div style="margin:20px 0;background-color:#dde0e0; height:1px;"></div>
-                                <h3 style="text-align:center; margin:40px 0; font-weight:bold; color:#333333;">技术数据</h3>
-                                <table style="text-align:center;">
-                                    <tr>
-                                        <td rowspan="5" style="background-color:#fff;width:50%;">
-                                            <a class="grouped_elements" rel="group1" href="@Model.ProfileImg">
-                                                <img style="max-height:270px; max-width:100%;" src="@Model.ProfileImg" alt="" />
-                                            </a>
-                                            <script type="text/javascript">
-                                                $(function () {
-                                                    $("a.grouped_elements").fancybox();
-                                                });
-                                            </script>
-                                        </td>
-                                        <td>
-                                            材料<br />
-                                            Material
-                                        </td>
-                                        <td>@Html.Raw(Model.Material)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            单位质量<br />
-                                            Weight
-                                        </td>
-                                        <td>@Model.Weight</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            长度<br />Length
-                                        </td>
-                                        <td>@Model.Length</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            集合惯性<br />
-                                            Mass of lnertia
-                                        </td>
-                                        <td>@Model.MassOfInertia</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            截面惯性<br />
-                                            Section Modulus
-                                        </td>
-                                        <td>@Model.SectionModulus</td>
-                                    </tr>
-                                </table>
-                            </div>
-
+                            
                         </div>
 
                         <div>
@@ -217,8 +297,6 @@
                         }
 
                     }
-
-
                 </div>
             </div>
         </div>

@@ -313,6 +313,20 @@ namespace AMW.Model.Entity
         		AddTimeValueFlag = true;
         	}
         }
+        private int _ShowType;
+        public bool ShowTypeFlag = false;
+        public int ShowType
+        {
+            get
+            {
+                return _ShowType;
+            }
+            set
+            {
+                _ShowType = value;
+                ShowTypeFlag = true;
+            }
+        }
         public string CategoryName1 { get; set; }
         public string CategoryName2 { get; set; }
 		   

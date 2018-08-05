@@ -16,12 +16,28 @@
                 <div class="title">
                     <img src="~/website/img/pro_info.png" />
                 </div>
+                <style type="text/css">
+                    .pro_info .title_list > a:hover{
+                        background-color:#deeae6;
+                        border:1px dashed #048b95;
+                        color:#018997;
+                    }
+                    .pro_info .title_right>ul li{
+                        width:auto !important;
+                        padding:0 15px;
+                    }
+                    .pro_info .title_list > a{
+                        margin-top: 15px;
+                        height: 57px;
+                        line-height:57px;
+                    }
+                </style>
                 <script type="text/javascript">
-                    function clickCategory(id,obj) {
+                    function clickCategory(id,cid,obj) {
                         $(".pro_info .title_right>ul li a").removeClass("cur");
                         $(obj).addClass("cur");
 
-                        $.post("/Home/GetHomeProduct2", { cid: id }).done(function (d) {
+                        $.post("/Home/GetHomeProduct2", { id:id,cid: cid }).done(function (d) {
                             $("#pc").html("");
                             if (!!d && !!d.ok && !!d.data) {
                                 if (!!d.data.proList && !!d.data.proList.length > 0) {
@@ -29,7 +45,12 @@
                                     var html = "<div class=\"row\">";
                                     d.data.proList.forEach(function (pro) {
                                         idx++;
-                                        html += "<div class=\"col-md-4\"><a class='aa' href=\"/Product/Index/" + pro.ID + "\"><img src=\"" + pro.Img + "\" /><p>" + pro.Name + "</p></a></div>";
+                                        html += "<div class=\"col-md-4\"><div class=\"diva\">" +
+                                                        "<div class=\"imgbg\">" +
+                                                            "<img src=\"" + pro.Img + "\">" +
+                                                            "<a href=\"javascript:void(0)\" onclick=\"window.open('http://wpa.qq.com/msgrd?V=1&amp;uin=2880260703'); return false;\" class=\"zx\">立即咨询</a>" +
+                                                            "<a href=\"/Product/Index/" + pro.ID + "\" class=\"lj\">了解详情</a>" +
+                                                        "</div><p>" + pro.Name + "</p></div></div>";
                                         if (idx % 3 == 0) {
                                             html += "</div><div class=\"row\">";
                                         }
@@ -54,10 +75,11 @@
             <div class="col-md-7">
                 <div class="title_right">
                     <ul>
-                        <li><a href="javascript:void(0)" onclick="clickCategory(8,this)">防静电工作台</a></li>
-                        <li><a href="javascript:void(0)" onclick="clickCategory(9, this)">流水线工作台</a></li>
-                        <li><a href="javascript:void(0)" onclick="clickCategory(10, this)">车间工作台</a></li>
-                        <li><a href="javascript:void(0)" onclick="clickCategory(11, this)">铝型材工作台</a></li>
+                        <li><a href="javascript:void(0)" onclick="clickCategory(1,'',this)">工作台</a></li>
+                        <li><a href="javascript:void(0)" onclick="clickCategory(7,'', this)">铝型材框架应用</a></li>
+                        <li><a href="javascript:void(0)" onclick="clickCategory(0,'30', this)">铝型材防护围栏</a></li>
+                        <li><a href="javascript:void(0)" onclick="clickCategory(5, '',this)">自动化设备</a></li>
+                        <li><a href="javascript:void(0)" onclick="clickCategory(0,'47,9', this)">流水线</a></li>
                     </ul>
                     <a href="/Product/List?id=1" id="proMore">MORE</a>
                 </div>
@@ -69,7 +91,16 @@
                                 foreach (var item in ViewBag.ProList1 as List<AMW.Model.Entity.MldProduct>)
                                 {
                                     i1++;
-                                    <div class="col-md-4"><a class="aa" href="/Product/Index/@item.ID"><img src="@item.Img" /><p>@item.Name</p></a></div>
+                                    <div class="col-md-4">
+                                        <div class="diva">
+                                            <div class="imgbg">
+                                                <img src="@item.Img" />
+                                                <a href="javascript:void(0)" onclick="window.open('http://wpa.qq.com/msgrd?V=1&uin=2880260703'); return false;" class="zx">立即咨询</a>
+                                                <a href="@("/Product/Index/" + item.ID)" class="lj">了解详情</a>
+                                            </div>
+                                            <p>@item.Name</p>
+                                        </div>
+                                    </div>
                                     if (i1 % 3 == 0)
                                     {
                                         @Html.Raw("</div><div class=\"row\">");

@@ -29,12 +29,12 @@ F:\NET工作区\房地产\代码\Model\bin\Debug\Model.dll
 F:\NET工作区\房地产\代码\Model\bin\Debug\Model.pdb
 F:\NET工作区\房地产\代码\Model\obj\Debug\Model.dll
 F:\NET工作区\房地产\代码\Model\obj\Debug\Model.pdb
-F:\NET工作区\上海皇闽铝业\代码\Model\bin\Debug\Model.dll
-F:\NET工作区\上海皇闽铝业\代码\Model\bin\Debug\Model.pdb
-F:\NET工作区\上海皇闽铝业\代码\Model\obj\Debug\Model.dll
-F:\NET工作区\上海皇闽铝业\代码\Model\obj\Debug\Model.pdb
 F:\NET工作区\at your services\代码\Model\bin\Debug\Model.dll
 F:\NET工作区\at your services\代码\Model\bin\Debug\Model.pdb
 F:\NET工作区\at your services\代码\Model\obj\Debug\Model.dll
 F:\NET工作区\at your services\代码\Model\obj\Debug\Model.pdb
+F:\NET工作区\上海皇闽铝业\代码\Model\bin\Debug\Model.dll
+F:\NET工作区\上海皇闽铝业\代码\Model\bin\Debug\Model.pdb
 F:\NET工作区\上海皇闽铝业\代码\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+F:\NET工作区\上海皇闽铝业\代码\Model\obj\Debug\Model.dll
+F:\NET工作区\上海皇闽铝业\代码\Model\obj\Debug\Model.pdb

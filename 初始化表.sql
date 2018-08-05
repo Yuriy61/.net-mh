@@ -123,3 +123,9 @@ create table MldApplicationArea(
 	HomeShowFlag int,
 	AddTime datetime
 )
+go
+alter table MldProduct add ShowType int
+go
+update MldProduct set ShowType=1
+
+update MldProduct set ShowType=2 where Cid in(select ID from MldProductCategory where Tid=3)

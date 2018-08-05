@@ -95,6 +95,10 @@ namespace AMW.DAL
 									if(model.AddTimeValueFlag){
 						dic.Add("AddTime", model.AddTime);
 					}
+                                    if (model.ShowTypeFlag)
+                                    {
+                                        dic.Add("ShowType", model.ShowType);
+                                    }
 				            return DBHelper.InsertInto("MldProduct", dic);
         }
 		
@@ -152,6 +156,10 @@ namespace AMW.DAL
 									if(model.AddTimeValueFlag){
 						dic.Add("AddTime", model.AddTime);
 					}
+                                    if (model.ShowTypeFlag)
+                                    {
+                                        dic.Add("ShowType", model.ShowType);
+                                    }
 				            return DBHelper.Update("MldProduct").Set(dic).Where("id=@1", model.ID).Execute() > 0;
         }
 		
