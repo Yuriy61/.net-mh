@@ -28,11 +28,11 @@ namespace AMW.DAL
 
         public AMW.Model.Entity.MldNews GetFirst()
         {
-            return DBHelper.From("MldNews").Take("*").Where("isshow=@1", 1).OrderBy("id desc").QueryFirstRow<AMW.Model.Entity.MldNews>();
+            return DBHelper.From("MldNews").Take("*").Where("isshow=@1", 1).OrderBy("id asc").QueryFirstRow<AMW.Model.Entity.MldNews>();
         }
         public List<AMW.Model.Entity.MldNews> Get3th()
         {
-            return DBHelper.From("MldNews").Take("*").Where("isshow=@1", 1).GoToPage(1,4).OrderBy("priority desc,id desc").QueryList<AMW.Model.Entity.MldNews>();
+            return DBHelper.From("MldNews").Take("*").Where("isshow=@1", 1).GoToPage(1,4).OrderBy("priority desc,id asc").QueryList<AMW.Model.Entity.MldNews>();
         }
 
         public AMW.Model.Entity.MldNews getPrev(int id)

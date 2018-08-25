@@ -49,6 +49,7 @@ namespace MyWeb.Areas.WebAdmin.Controllers
                     model.Icon = result2.Data;
                     model.Name = name;
                     model.SubHead = subhead;
+                    model.HomeShowFlag = homeshowflag;
 
                     int id = dal.Add(model);
                     if (id > 0)
@@ -116,6 +117,7 @@ namespace MyWeb.Areas.WebAdmin.Controllers
             model.Icon = imgUrl2;
             model.Name = name;
             model.SubHead = subhead;
+            model.HomeShowFlag = homeshowflag;
 
             if (dal.Update(model))
             {

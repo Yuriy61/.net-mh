@@ -722,19 +722,8 @@
     <Content Include="website\banner\css\banner.css" />
     <Content Include="website\banner\css\bootstrap.min.css" />
     <Content Include="website\banner\css\style.css" />
-    <Content Include="website\banner\img\about-us-banner-2x.jpg" />
-    <Content Include="website\banner\img\about-us-banner-app.jpg" />
-    <Content Include="website\banner\img\about-us-banner.jpg" />
-    <Content Include="website\banner\img\health-banner1-2x-small.jpg" />
-    <Content Include="website\banner\img\health-banner1-2x.jpg" />
-    <Content Include="website\banner\img\health-banner1-app.jpg" />
-    <Content Include="website\banner\img\health-banner2-2x.jpg" />
-    <Content Include="website\banner\img\health-banner2-app.jpg" />
-    <Content Include="website\banner\img\health-banner3-2x.jpg" />
     <Content Include="website\banner\img\next.png" />
     <Content Include="website\banner\img\prev.png" />
-    <Content Include="website\banner\img\tuhuan-banner1.jpg" />
-    <Content Include="website\banner\img\tuhuan-banner2.jpg" />
     <Content Include="website\banner\js\banner.js" />
     <Content Include="website\banner\js\jquery-1.11.3.min.js" />
     <Content Include="website\banner\js\jquery.min.js" />
@@ -743,6 +732,46 @@
     <Content Include="website\css\search.css" />
     <Content Include="website\css\index.css" />
     <Content Include="website\css\basic.css" />
+    <Content Include="website\friends\ABB_03.jpg" />
+    <Content Include="website\friends\上海交通大学.jpg" />
+    <Content Include="website\friends\上海光机所.jpg" />
+    <Content Include="website\friends\上海电气.jpg" />
+    <Content Include="website\friends\中国南车.jpg" />
+    <Content Include="website\friends\中国科学院.jpg" />
+    <Content Include="website\friends\中国邮政.jpg" />
+    <Content Include="website\friends\中船重工.jpg" />
+    <Content Include="website\friends\南通中集.jpg" />
+    <Content Include="website\friends\吉利汽车.jpg" />
+    <Content Include="website\friends\同济大学.jpg" />
+    <Content Include="website\friends\大众.jpg" />
+    <Content Include="website\friends\富士康.jpg" />
+    <Content Include="website\friends\山东临工.jpg" />
+    <Content Include="website\friends\帕马.jpg" />
+    <Content Include="website\friends\库卡.jpg" />
+    <Content Include="website\friends\正大集团.jpg" />
+    <Content Include="website\friends\浙江大学.jpg" />
+    <Content Include="website\friends\皇明太阳能.jpg" />
+    <Content Include="website\friends\福耀玻璃工业集团股份有限公司.jpg" />
+    <Content Include="website\friends\西门子.jpg" />
+    <Content Include="website\friends\长虹电器.jpg" />
+    <Content Include="website\honor\2018年度十佳厂商.jpg" />
+    <Content Include="website\honor\上海市莆田商会.jpg" />
+    <Content Include="website\honor\上海铝业行业协会.jpg" />
+    <Content Include="website\honor\上海铝业行业协会1.jpg" />
+    <Content Include="website\honor\信用资质等级证书.jpg" />
+    <Content Include="website\honor\商标注册证.jpg" />
+    <Content Include="website\honor\商标注册证1.jpg" />
+    <Content Include="website\honor\实用新型专利证书01.jpg" />
+    <Content Include="website\honor\实用新型专利证书012.jpg" />
+    <Content Include="website\honor\实用新型专利证书02.jpg" />
+    <Content Include="website\honor\实用新型专利证书022.jpg" />
+    <Content Include="website\honor\实用新型专利证书03.jpg" />
+    <Content Include="website\honor\实用新型专利证书032.jpg" />
+    <Content Include="website\honor\科技创新发明成果.jpg" />
+    <Content Include="website\honor\营业执照.jpg" />
+    <Content Include="website\honor\质量管理体系认证证书.jpg" />
+    <Content Include="website\honor\质量管理体系认证证书2.jpg" />
+    <Content Include="website\honor\质量管理体系认证证书_看图王-1.jpg" />
     <Content Include="website\img\aboutus_title.png" />
     <Content Include="website\img\about_company_img.png" />
     <Content Include="website\img\about_img.png" />
@@ -757,12 +786,16 @@
     <Content Include="website\img\area3.png" />
     <Content Include="website\img\area4.png" />
     <Content Include="website\img\area5.png" />
-    <Content Include="website\img\banner.jpg" />
+    <Content Include="website\img\banner1.jpg" />
+    <Content Include="website\img\banner2.jpg" />
+    <Content Include="website\img\banner3.jpg" />
     <Content Include="website\img\comment_bg.jpg" />
     <Content Include="website\img\customer.png" />
     <Content Include="website\img\customization_process.png" />
+    <Content Include="website\img\features.jpg" />
     <Content Include="website\img\features.png" />
     <Content Include="website\img\features_img.png" />
+    <Content Include="website\img\feature_bg.jpg" />
     <Content Include="website\img\feature_bg.png" />
     <Content Include="website\img\foot_img.png" />
     <Content Include="website\img\friends.png" />
@@ -803,6 +836,7 @@
     <Content Include="website\img\pro_img_big.png" />
     <Content Include="website\img\pro_info.png" />
     <Content Include="website\img\pro_show_title.png" />
+    <Content Include="website\img\star_product_img.jpg" />
     <Content Include="website\img\star_product_img.png" />
     <Content Include="website\img\url.png" />
     <Content Include="website\img\仓储配送01-1.jpg" />
@@ -900,8 +934,10 @@
     <Content Include="website\js\jquery.fancybox-1.3.4\jquery-1.4.3.min.js" />
     <Content Include="website\js\jquery.fancybox-1.3.4\style.css" />
     <Content Include="website\js\ZoomPic.js" />
+    <Content Include="website\mobile\img\logo.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Mobile\MobileAreaRegistration.cs" />
     <Compile Include="Areas\WebAdmin\Controllers\AdminController.cs" />
     <Compile Include="Areas\WebAdmin\Controllers\CommentController.cs" />
     <Compile Include="Areas\WebAdmin\Controllers\FormController.cs" />
@@ -1015,6 +1051,8 @@
     <Content Include="Areas\WebAdmin\Views\ApplicationArea\Edit.cshtml" />
     <Content Include="Areas\WebAdmin\Views\ApplicationArea\List.cshtml" />
     <Content Include="Areas\WebAdmin\Views\ApplicationArea\Index.cshtml" />
+    <Content Include="Areas\Mobile\Views\web.config" />
+    <Content Include="Areas\Mobile\Views\Shared\_LayoutMain.cshtml" />
     <None Include="Properties\PublishProfiles\file.pubxml" />
     <None Include="Properties\PublishProfiles\正式版.pubxml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
@@ -1048,6 +1086,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Mobile\Controllers\" />
+    <Folder Include="Areas\Mobile\Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\组件\Common\Common.csproj">

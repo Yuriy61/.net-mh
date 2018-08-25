@@ -136,7 +136,7 @@ $.fn.THBanner = function (arg) {
 
     
     var width = 1920;
-    var height = 520;
+    var height = 762;
     $(bannerObj).height(screen.width * height / width);
     window.onresize = function () {
         $(bannerObj).height(screen.width * height / width);

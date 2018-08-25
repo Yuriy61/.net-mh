@@ -11,7 +11,7 @@ $(function () {
 		timer = setInterval(btn_right, 4000);
 	});
 	
-	var arr = ['cur_left2', 'cur_left1', 'cur', 'cur_right1', 'cur_right2','',''];
+	var arr = ['cur_left2', 'cur_left1', 'cur', 'cur_right1', 'cur_right2', '', '', '', '', '', '', '', '', '', '', '', '', ''];
 	var index = 0;
 	
 	//上一张
@@ -29,7 +29,7 @@ $(function () {
 	
 	//点击上一张的封装函数
 	function btn_left() {
-		arr.unshift(arr[6]);
+		arr.unshift(arr[18]);
 		arr.pop();
 		$('.Cooldog_content li').each(function (i, e) {
 			$(e).removeClass().addClass(arr[i]);

@@ -6,7 +6,7 @@
         $(".nav_div a").eq(0).addClass("cur");
     });
 </script>
-<link href="~/website/css/index.css" rel="stylesheet" type="text/css" media="all" />
+<link href="~/website/css/index.css?r=112" rel="stylesheet" type="text/css" media="all" />
 @Html.Partial("_PartialBanner")
 <link href="~/website/css/proinfo.css" rel="stylesheet" type="text/css" media="all" />
 <div class="pro_info">
@@ -47,7 +47,7 @@
                                         idx++;
                                         html += "<div class=\"col-md-4\"><div class=\"diva\">" +
                                                         "<div class=\"imgbg\">" +
-                                                            "<img src=\"" + pro.Img + "\">" +
+                                                            "<img src=\"" + pro.Img + "?r=22111\">" +
                                                             "<a href=\"javascript:void(0)\" onclick=\"window.open('http://wpa.qq.com/msgrd?V=1&amp;uin=2880260703'); return false;\" class=\"zx\">立即咨询</a>" +
                                                             "<a href=\"/Product/Index/" + pro.ID + "\" class=\"lj\">了解详情</a>" +
                                                         "</div><p>" + pro.Name + "</p></div></div>";
@@ -131,16 +131,10 @@
                     <span class="next"></span>
                     <ul>
                         <li>
-                            <a href="/Product/Index/7">
-                                <img alt="防静电流水线工作台" src="/website/img/防静电流水线工作台.jpg" />
-                                <p>防静电流水线工作台</p>
-                            </a>
+                            <a href="/Product/Index/7"><img alt="防静电流水线工作台" src="/website/img/防静电流水线工作台.jpg" /><p>防静电流水线工作台</p></a>
                         </li>
                         <li>
-                            <a href="/Product/Index/138">
-                                <img alt="机器人防护围栏？" src="/website/img/机器人防护围栏.jpg" />
-                                <p>机器人防护围栏</p>
-                            </a>
+                            <a href="/Product/Index/138"><img alt="机器人防护围栏？" src="/website/img/机器人防护围栏.jpg" /><p>机器人防护围栏</p></a>
                         </li>
                         <li>
                             <a href="/Product/Index/271">
@@ -178,7 +172,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div style="text-align:center;"><img src="~/website/img/features.png" /></div>
+                <div style="text-align:center;"><img src="~/website/img/features.png?r=1558234" /></div>
                 <img src="~/website/img/features_img.jpg" style="width:100%; margin-top:45px;" />
             </div>
         </div>
@@ -220,7 +214,16 @@
 
 <link rel="stylesheet" href="/website/js/AmazeUI/assets/css/amazeui.min.css">
 <link rel="stylesheet" href="/website/js/AmazeUI/assets/css/app.css">
-
+<style type="text/css">
+    .am-slider-default{
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    .am-slider .am-slides>li>a{
+        display:block;
+    }
+</style>
 <div class="pro_customer">
     <div class="container">
         <div class="row">
@@ -229,12 +232,50 @@
 
                 <div class="am-slider am-slider-default am-slider-carousel" data-am-flexslider="{itemWidth: 227, itemMargin: 10, slideshow: false}">
                     <ul class="am-slides">
-                        <li><a href="#"><img src="~/website/img/friends1.jpg" /></a></li>
-                        <li><a href="#"><img src="~/website/img/friends2.jpg" /></a></li>
-                        <li><a href="#"><img src="~/website/img/friends3.jpg" /></a></li>
-                        <li><a href="#"><img src="~/website/img/friends4.png" /></a></li>
-                        <li><a href="#"><img src="~/website/img/friends5.png" /></a></li>
-                        <li><a href="#"><img src="~/website/img/friends6.png" /></a></li>
+                        <li>
+                            <a href="javascript:void();"><img src="~/website/friends/ABB_03.jpg" /></a>
+                            <a href="javascript:void();"><img src="~/website/friends/大众.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();"><img src="~/website/friends/福耀玻璃工业集团股份有限公司.jpg" /></a>
+                            <a href="javascript:void();"><img src="~/website/friends/富士康.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();"><img src="~/website/friends/皇明太阳能.jpg" /></a>
+                            <a href="javascript:void();"><img src="~/website/friends/吉利汽车.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();"><img src="~/website/friends/库卡.jpg" /></a>
+                            <a href="javascript:void();"><img src="~/website/friends/南通中集.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();"><img src="~/website/friends/帕马.jpg" /></a>
+                            <a href="javascript:void();"><img src="~/website/friends/山东临工.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();"><img src="~/website/friends/上海电气.jpg" /></a>
+                            <a href="javascript:void();"><img src="~/website/friends/上海光机所.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();"><img src="~/website/friends/上海交通大学.jpg" /></a>
+                            <a href="javascript:void();"><img src="~/website/friends/同济大学.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();"><img src="~/website/friends/西门子.jpg" /></a>
+                            <a href="javascript:void();"><img src="~/website/friends/长虹电器.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();"><img src="~/website/friends/浙江大学.jpg" /></a>
+                            <a href="javascript:void();"><img src="~/website/friends/正大集团.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();"><img src="~/website/friends/中船重工.jpg" /></a>
+                            <a href="javascript:void();"><img src="~/website/friends/中国科学院.jpg" /></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void();"><img src="~/website/friends/中国南车.jpg" /></a>
+                            <a href="javascript:void();"><img src="~/website/friends/中国邮政.jpg" /></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -242,7 +283,7 @@
 
         <div class="row">
             <div class="col-md-12" style="text-align:center;padding:50px 0;">
-                <a href="#"><img src="~/website/img/more.png" /></a>
+                <a href="javascript:void();"><img src="~/website/img/more.png" /></a>
             </div>
         </div>
     </div>
@@ -266,9 +307,11 @@
         <div class="row">
             <div class="col-md-12 about_content">
                 <img src="~/website/img/about_img.png" />
-                <p class="about_title">上海皇闽铝业有限公司</p>
-                <p>上海皇闽铝业有限公司是国内生产工业麵材的童点厂家之一，公司引进欧美国家的先进技术，产品已通过 IS 09001质量管理体系和产品质量认证究设计开发制造销售服务工业^材斗技创新新型的企业.公司本着'互惠互利、薄利多销”的经营理念,利用物流通道为各地区客户提供优质的服务和优惠的价格.本公司工业材质量一流.本公司细分为六大板块 ： 一:设计模具开发二:工业麵材挤压三:麵林框架及流?}^ li 送设备安装四:炫铸氧化电泳粉末喷涂五:非标工麵材产品直 销 六 : 工 件公司致力于市场新产品的开发，奉行产品质...</p>
-                <p><a href="/Home/AboutUs">{查看详情}</a></p>
+                <p class="about_title" style="margin-bottom:8px;margin-top:0;">上海皇闽铝业有限公司</p>
+                <p style="margin:8px 0;">上海皇闽铝业有限公司是国内生产工业铝型材的重点厂家之一，公司引进欧美国家的先进技术，产品已通过ISO9001质量管理体系和产品质量认证，是一家集研究设计开发制造销售服务工业铝型材一体科技创新新型的企业。公司本着“互惠互利、薄利多销”的经营理念，利用物流通道为各地区客户提供优质的服务和优惠的价格。本公司工业铝型材质量一流。</p>
+                <p style="margin:8px 0;">本公司细分为七大板块：一：设计模具开发 二：工业铝型材挤压 三：铝型材框架及流水线输送设备安装 四：熔铸氧化电泳粉末喷涂 五：非标工业铝型材产品直销 六：工业铝型材配件 七：精密零部件加工。</p>
+                <p style="margin:8px 0;">公司致力于市场新产品的开发，奉行产品质量精益求精，信誉待客为宗旨，欢迎新老客户光临惠顾。</p>
+                <p style="margin:10px 0;"><a href="/Home/AboutUs">{查看详情}</a></p>
             </div>
         </div>
     </div>
@@ -290,15 +333,24 @@
                 <div class="Cooldog_container" style="margin-bottom:40px;">
                     <div class="Cooldog_content">
                         <ul>
-                            <li class="cur_left2"><a href="#"><img src="/website/img/honor_img1.png" alt=""></a></li>
-                            <li class="cur_left1"><a href="#"><img src="/website/img/honor_img2.png" alt=""></a></li>
-                            <li class="cur"><a href="#"><img src="/website/img/honor_img3.png" alt=""></a></li>
-                            <li class="cur_right1"><a href="#"><img src="/website/img/honor_img4.png" alt=""></a></li>
-                            <li class="cur_right2"><a href="#"><img src="/website/img/honor_img5.png" alt=""></a></li>
-                            <li><a href="#"><img src="/website/img/honor_img6.png" alt=""></a></li>
-                            <li><a href="#"><img src="/website/img/honor_img7.png" alt=""></a></li>
-                            <li><a href="#"><img src="/website/img/honor_img8.png" alt=""></a></li>
-                            <li><a href="#"><img src="/website/img/honor_img9.png" alt=""></a></li>
+                            <li class="cur_left2"><a href="javascript:void();"><img src="/website/honor/2018年度十佳厂商.jpg" alt=""></a></li>
+                            <li class="cur_left1"><a href="javascript:void();"><img src="/website/honor/科技创新发明成果.jpg" alt=""></a></li>
+                            <li class="cur"><a href="javascript:void();"><img src="/website/honor/商标注册证.jpg" alt=""></a></li>
+                            <li class="cur_right1"><a href="javascript:void();"><img src="/website/honor/商标注册证1.jpg" alt=""></a></li>
+                            <li class="cur_right2"><a href="javascript:void();"><img src="/website/honor/上海铝业行业协会.jpg" alt=""></a></li>
+                            <li><a href="javascript:void();"><img src="/website/honor/上海铝业行业协会1.jpg" alt=""></a></li>
+                            <li><a href="javascript:void();"><img src="/website/honor/上海市莆田商会.jpg" alt=""></a></li>
+                            <li><a href="javascript:void();"><img src="/website/honor/实用新型专利证书01.jpg" alt=""></a></li>
+                            <li><a href="javascript:void();"><img src="/website/honor/实用新型专利证书012.jpg" alt=""></a></li>
+                            <li><a href="javascript:void();"><img src="/website/honor/实用新型专利证书02.jpg" alt=""></a></li>
+                            <li><a href="javascript:void();"><img src="/website/honor/实用新型专利证书022.jpg" alt=""></a></li>
+                            <li><a href="javascript:void();"><img src="/website/honor/实用新型专利证书03.jpg" alt=""></a></li>
+                            <li><a href="javascript:void();"><img src="/website/honor/实用新型专利证书032.jpg" alt=""></a></li>
+                            <li><a href="javascript:void();"><img src="/website/honor/信用资质等级证书.jpg" alt=""></a></li>
+                            <li><a href="javascript:void();"><img src="/website/honor/营业执照.jpg" alt=""></a></li>
+                            <li><a href="javascript:void();"><img src="/website/honor/质量管理体系认证证书.jpg" alt=""></a></li>
+                            <li><a href="javascript:void();"><img src="/website/honor/质量管理体系认证证书_看图王-1.jpg" alt=""></a></li>
+                            <li><a href="javascript:void();"><img src="/website/honor/质量管理体系认证证书2.jpg" alt=""></a></li>
                         </ul>
                     </div>
                     <a href="javascript:;" class="btn_left" style="text-decoration: none;">
@@ -329,7 +381,7 @@
                         if(null != newsFirst){
                             <img style="width:160px; height:105px;" src="@newsFirst.Img" />
                             <p class="p1">@newsFirst.Title</p>
-                            <p class="p2">@newsFirst.SubHead</p>
+                            <p class="p2" style="margin:10px 0 !important;">@newsFirst.SubHead</p>
                             <p class="p3"><a href="/News/Index/@newsFirst.ID">[查看详情]</a></p>        
                         }
                     }

@@ -128,4 +128,4 @@ alter table MldProduct add ShowType int
 go
 update MldProduct set ShowType=1
 
-update MldProduct set ShowType=2 where Cid in(select ID from MldProductCategory where Tid=3)
+update MldProduct set ShowType=2 where Cid in(select ID from MldProductCategory where Tid in(1,3,4,6,7))

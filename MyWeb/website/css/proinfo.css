@@ -223,9 +223,6 @@
             opacity:.5;
 
         }
-
-
-
         .pro_temp_elite .pro_temp_elite_title{
             color:#333333; font-size:12px; height:45px;line-height:45px;border-bottom:1px solid #f4f4f4;
             font-weight:bold;
@@ -310,6 +307,7 @@
         .star_product .star_product_title:before{
             content:' ';
             display:block;
+            float:left;
             width:220px;
             height:3px;
             background: -webkit-linear-gradient(left, #018997, #41af6d); /* Safari 5.1 - 6.0 */
@@ -320,8 +318,6 @@
             bottom:0;
             left:0;
         }
-
-
         .star_product .product_detail .product_detail1{
             width:100%;
             overflow:hidden;
